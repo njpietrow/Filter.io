@@ -88,7 +88,7 @@ const DrawingUtils = {
     //draw lines beteen key points.
     drawConnectors(canvasCtx,{0: leftEyeCorner, 1: rightEyeCorner, 2: upperLip, 3: eyeMidPoint, 4: originPoint},[[0,1],[2,3],[2,4]],{color: 'red', lineWidth: 1})
     
-    //return rotation and skew angles in radians
+    //return rotation and skew angles in radians 
     return {rotation: rotation, skew: skew}
   }
 
