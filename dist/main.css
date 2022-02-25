@@ -20,7 +20,7 @@ nav {
 .filter-controls {
   display: flex;
   justify-content: space-between;
-  width: 500px;
+  width: 100%;
 }
 
 .app {
@@ -54,7 +54,7 @@ section {
   justify-content: center;
   align-items: flex-end;
   height: 600px;
-  width: 90% px;
+  width: 90%;
 }
 
 .content {
