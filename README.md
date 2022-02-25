@@ -10,7 +10,7 @@ With this application, users will be able to:
 * Select from multiple options of video filters
 
 ## Wireframes
-<img src="img_girl.jpg"> 
+<img src="https://github.com/njpietrow/Filterio/blob/main/readme_files/filterio---Wireframe-cc-Premium.pdf"> 
 
 ## Technologies, Libraries, APIs
 This project will be implemented with the following technologies:
