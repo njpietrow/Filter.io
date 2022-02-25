@@ -13,6 +13,15 @@ window.addEventListener('DOMContentLoaded', () => {
   ctx.fillStyle = "rgba(255, 200, 150, 0.5)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+  ctx.beginPath();
+  ctx.arc(400, 90, 25, 0, 2 * Math.PI);
+  ctx.strokeStyle = 'blue';
+  ctx.lineWidth = 10;
+  ctx.stroke();
+  ctx.fillStyle = 'pink';
+  ctx.fill();
+
+
   // let background = new Image();
   // background.src = "https://thediscerningcat.com/wp-content/uploads/2021/09/british-short-hair-chincilla-up-close.jpg";
 
