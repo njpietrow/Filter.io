@@ -10,9 +10,36 @@
     <script src="./dist/main.js"></script>
   </head>
 
-  <body>
-    <h1>Filterio</h1>
-    <canvas id="game-canvas" width="700" height="500"></canvas>
+  <body class="app">
+    <header>
+      <nav class="nav-bar">
+        <h1 class="title">Filterio</h1>
+        <div class="link-container">
+          <a href="#">Github</a>
+          <a href="">Personal Website</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section>
+        <canvas id="game-canvas" width="700" height="500"></canvas>
+        <div class="filter-controls">
+          <div class="filter-select-container"> 
+            <label for="filter-select">Select a filter</label>
+            <select id="filter-select">
+              <option name="filter[type]" value="hat">Hat</option>
+              <option name="filter[type]" value="glasses">glasses</option>
+              <option name="filter[type]" value="batman">batman</option>
+            </select>
+          </div>
+          <div class="camera-controls">
+            <button class="capture">Take a picture</button>
+            <button class="webcam-toggle">Turn webcam off/on</button>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 
