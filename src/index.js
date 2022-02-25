@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (canvas.width > 700) canvas.width = 700;
   canvas.height = canvas.width * (720/1280);
 
-  ctx.fillStyle = "rgba(255, 200, 150, 0.5)";
+  ctx.fillStyle = "rgba(255, 200, 150, 0.3)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   ctx.beginPath();

@@ -19,7 +19,8 @@ const VideoTools = {
         if (op >= 1) clearInterval(timer);
         videoElement.style.opacity = op;
         videoElement.style.filter = `alpha(opacity=${op * 100})`;
-        op += op * 0.1 || 0.1;
+        op ||= 0.1;
+        op += op * 0.1;
     }, 40);
   }
 }

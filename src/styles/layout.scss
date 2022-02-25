@@ -25,7 +25,15 @@ nav {
   width: 90%;
 }
 
-video, canvas {
+// make this video background dynamic
+.video-background { 
+  height: 394px;
+  width: 700px;
+  z-index: -1;
+}
+
+
+video, canvas, .video-background {
   display: block;
   margin: 0 auto;
   position: absolute;
@@ -38,6 +46,7 @@ video, canvas {
 
 canvas {
   border: 1px solid orange;
+  z-index: 1;
 }
 
 

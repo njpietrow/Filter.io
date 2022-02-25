@@ -1,5 +1,5 @@
 {
-  "name": "Filterio",
+  "name": "Filter.io",
   "version": "1.0.0",
   "description": "Filterio uses facial recognition to overlay images and filters onto a video feed from a webcam. By tracking specific facial features like eyes and a nose, Filterio can accurately map images onto the video stream of a face. When you find a filter you like, snap a picture with the capture button to share the photo with your friends.",
   "main": "webpack.config.js",
@@ -18,7 +18,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch --mode=development",
     "build": "webpack --mode=production"
   },
@@ -27,15 +26,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/njpietrow/Filterio.git"
+    "url": "git+https://github.com/njpietrow/Filter.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/njpietrow/Filterio/issues"
+    "url": "https://github.com/njpietrow/Filter.io/issues"
   },
-  "homepage": "https://github.com/njpietrow/Filterio#readme"
-  
+  "homepage": "https://github.com/njpietrow/Filter.io#readme"
 }
-

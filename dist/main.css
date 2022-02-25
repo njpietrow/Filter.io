@@ -28,7 +28,13 @@ nav {
   width: 90%;
 }
 
-video, canvas {
+.video-background {
+  height: 394px;
+  width: 700px;
+  z-index: -1;
+}
+
+video, canvas, .video-background {
   display: block;
   margin: 0 auto;
   position: absolute;
@@ -39,6 +45,7 @@ video, canvas {
 
 canvas {
   border: 1px solid orange;
+  z-index: 1;
 }
 
 section {
@@ -60,4 +67,8 @@ section {
 
 .link-container, .title-container {
   background-color: orange;
+}
+
+.video-background {
+  background-color: purple;
 }
