@@ -23,3 +23,14 @@ nav {
   margin: auto;
   width: 90%;
 }
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+section {
+  position: relative;
+}

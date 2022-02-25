@@ -27,6 +27,17 @@ nav {
   width: 90%;
 }
 
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+section {
+  position: relative;
+}
+
 .content {
   background-color: rgba(128, 128, 128, 0.392);
 }
