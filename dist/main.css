@@ -26,3 +26,11 @@ nav {
   margin: auto;
   width: 90%;
 }
+
+.content {
+  background-color: rgba(128, 128, 128, 0.392);
+}
+
+.nav-bar {
+  background-color: #9d7bfa;
+}

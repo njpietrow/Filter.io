@@ -24,7 +24,7 @@ This project will be implemented with the following technologies:
 * The Canvas API to render the face filters as pngs
 * Webpack and Babel to bundle and transpile the source JavaScript code
 * npm to manage project dependencies
-* Tracking.js library to bring computer vision algorithms to the browser for facial recognition and facial landmark mapping
+* Media Pipe face mesh library to bring computer vision algorithms to the browser for facial recognition and facial landmark mapping
 
 ## Implementation Timeline
 * **Thursday** - research the tracking js libary and learn how to use/import
