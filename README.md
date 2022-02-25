@@ -16,7 +16,7 @@ In addition, the project will include:
 * A descriptive readme and licenses/credits
 
 ## Wireframes
-<img src="https://github.com/njpietrow/Filterio/blob/main/readme_files/Screen%20Shot%202022-02-24%20at%204.35.53%20PM.png"> 
+<img src="https://github.com/njpietrow/Filter.io/blob/main/assets/Screen%20Shot%202022-02-24%20at%204.35.53%20PM.png"> 
 
 ## Technologies, Libraries, APIs
 This project will be implemented with the following technologies:
