@@ -23,11 +23,11 @@ This project will be implemented with the following technologies:
 `simple snippet`
 
 ## Implementation Timeline
-* Thursday - research the tracking js libary and learn how to use/import
-* Friday - Setup project, including getting webpack up and running. Design structure of page
-* Saturday/Sunday - Display Live camera feed and display face recognition and landmarks
-* Monday - Create face filters to map to user face
-* Tuesday - Warp/skew filters based on face angle. Tune refresh rate
-* Wednesday - Allow users to select filters and revamp page UI. 
-* Thursday Morning - Deploy to GitHub pages. If time, rewrite this proposal as a production README.
+* **Thursday** - research the tracking js libary and learn how to use/import
+* **Friday** - Setup project, including getting webpack up and running. Design structure of page
+* **Saturday/Sunday** - Display Live camera feed and display face recognition and landmarks
+* **Monday** - Create face filters to map to user face
+* **Tuesday** - Warp/skew filters based on face angle. Tune refresh rate
+* **Wednesday** - Allow users to select filters and revamp page UI. 
+* **Thursday Morning** - Deploy to GitHub pages. If time, rewrite this proposal as a production README.
 
