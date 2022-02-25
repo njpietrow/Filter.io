@@ -57,3 +57,7 @@ section {
 .nav-bar {
   background-color: #9d7bfa;
 }
+
+.link-container, .title-container {
+  background-color: orange;
+}

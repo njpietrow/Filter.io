@@ -1,11 +1,9 @@
-node_modules/
 /.DS_Store
 **/.DS_Store
 Gemfile.lock
 **/Gemfile.lock
 
 
-**/.bundle
 **/log/*
 **/tmp/*
 !/log/.keep
@@ -15,7 +13,6 @@ Gemfile.lock
 **/node_modules
 **/yarn-error.log
 **/public/assets
-.byebug_history
 **/config/master.key
 /.bundle
 /log/*

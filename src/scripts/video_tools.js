@@ -13,15 +13,17 @@ const VideoTools = {
       }
     )
   },
-  fade: function(element) {
-    var op = 0;
-    var timer = setInterval(function() {
+  fade: function(videoElement) {
+    let op = 0;
+    let timer = setInterval(function() {
         if (op >= 1) clearInterval(timer);
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        videoElement.style.opacity = op;
+        videoElement.style.filter = `alpha(opacity=${op * 100})`;
         op += op * 0.1 || 0.1;
     }, 40);
   }
 }
 
-export {VideoTools}
+export default VideoTools
+// only one export default allowed per file
+// export {VideoTools}

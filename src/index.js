@@ -1,6 +1,6 @@
 //Add a script for the filter class
-//Add a script for the video display class
-import {VideoTools} from './scripts/video_tools';
+//add a script for the face mesh
+import VideoTools from './scripts/video_tools';
 //Add a script(s) for button effects
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -39,6 +39,8 @@ window.addEventListener('DOMContentLoaded', () => {
     VideoTools.fade(video);
   };
 
+  //interval loop to redraw all applicable filters
+    //redraw canvas border
 
   video.addEventListener( "loadedmetadata", function (e) {
     var width = this.videoWidth,
