@@ -1,5 +1,5 @@
 # Filterio
-Filterio uses facial recognition to overlay images and filters onto a video feed from your webcam. By tracking specific facial features like your eyes and nose, Filterio can accurately map images onto the video stream of a face and display the output on a screen.
+Filterio uses facial recognition to overlay images and filters onto a video feed from a webcam. By tracking specific facial features like eyes and a nose, Filterio can accurately map images onto the video stream of a face and display the output on a screen.
 
 ## Functionality & MVPs
 With this application, users will be able to:
