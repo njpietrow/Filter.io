@@ -13,7 +13,7 @@ With this application, users will be able to:
 In addition, the project will include:
 * Links to the creator's personal pages
 * An introductory instruction popup
-* A descriptive readme and liceses/credits
+* A descriptive readme and licenses/credits
 
 ## Wireframes
 <img src="https://github.com/njpietrow/Filterio/blob/main/readme_files/Screen%20Shot%202022-02-24%20at%204.35.53%20PM.png"> 
