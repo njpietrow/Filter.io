@@ -36,6 +36,10 @@ video, canvas {
   transform: translate(-50%, -50%);
 }
 
+canvas {
+  border: 1px solid orange;
+}
+
 
 section {
   position: relative; 
