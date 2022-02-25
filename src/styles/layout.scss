@@ -17,6 +17,7 @@ nav {
 .filter-controls {
   display: flex;
   justify-content: space-between;
+  width: 500px;
 }
 
 .app {
@@ -24,13 +25,25 @@ nav {
   width: 90%;
 }
 
-canvas {
+video, canvas {
+  display: block;
+  margin: 0 auto;
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  // width: 80%;
+  // height: 80%;
+  transform: translate(-50%, -50%);
 }
 
+
 section {
-  position: relative;
+  position: relative; 
+  // width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 600px;
+  width: 90%px;
 }
+

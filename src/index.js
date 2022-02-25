@@ -8,7 +8,10 @@ window.addEventListener('DOMContentLoaded', () => {
   let ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth * (.8);
   if (canvas.width > 700) canvas.width = 700;
-  canvas.height = canvas.width * (5/7);
+  canvas.height = canvas.width * (720/1280);
+
+  ctx.fillStyle = "rgba(255, 200, 150, 0.5)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // let background = new Image();
   // background.src = "https://thediscerningcat.com/wp-content/uploads/2021/09/british-short-hair-chincilla-up-close.jpg";
@@ -27,6 +30,13 @@ window.addEventListener('DOMContentLoaded', () => {
     VideoTools.fade(video);
   };
 
+
+  video.addEventListener( "loadedmetadata", function (e) {
+    var width = this.videoWidth,
+        height = this.videoHeight;
+    console.log(width)
+    console.log(height)
+  }, false );
  
 
  
