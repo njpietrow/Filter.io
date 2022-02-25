@@ -10,7 +10,7 @@ With this application, users will be able to:
 * Select from multiple options of video filters
 
 ## Wireframes
-<img src="https://github.com/njpietrow/Filterio/blob/main/readme_files/filterio---Wireframe-cc-Premium.pdf"> 
+<img src="https://github.com/njpietrow/Filterio/blob/main/readme_files/Screen%20Shot%202022-02-24%20at%204.35.53%20PM.png"> 
 
 ## Technologies, Libraries, APIs
 This project will be implemented with the following technologies:
