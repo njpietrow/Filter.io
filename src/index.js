@@ -41,6 +41,13 @@ window.addEventListener('DOMContentLoaded', () => {
     VideoTools.fade(video);
   };
 
+  async function drawVideo(){
+    // Draw the video stream into our screen
+    ctx.drawImage(video, 0, 0);
+    // Call self again
+    requestAnimationFrame(drawVideo);
+}
+
 
   const faceMesh = new FaceMesh({locateFile: (file) => {
     return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`;
@@ -51,6 +58,18 @@ window.addEventListener('DOMContentLoaded', () => {
     minDetectionConfidence: 0.5,
     minTrackingConfidence: 0.5
   });
+
+
+  // const camera = new Camera(videoElement, {
+  //   onFrame: async () => {
+  //     await faceMesh.send({image: videoElement});
+  //   },
+  //   width: 1280,
+  //   height: 720
+  // });
+  // camera.start();
+
+
 
   console.log(faceMesh);
 
