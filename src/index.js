@@ -1,6 +1,8 @@
 //Add a script for the filter class
 //add a script for the face mesh
 import VideoTools from './scripts/video_tools';
+import {FaceMesh} from './../node_modules/@mediapipe/face_mesh/face_mesh'
+// const faceMesh = require('@tensorflow-models/facemesh');
 //Add a script(s) for button effects
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -22,12 +24,12 @@ window.addEventListener('DOMContentLoaded', () => {
   ctx.fill();
 
 
-  // let background = new Image();
-  // background.src = "https://thediscerningcat.com/wp-content/uploads/2021/09/british-short-hair-chincilla-up-close.jpg";
+  // // let background = new Image();
+  // // background.src = "https://thediscerningcat.com/wp-content/uploads/2021/09/british-short-hair-chincilla-up-close.jpg";
 
-  // background.onload = function(){
-  //   ctx.drawImage(background,0,0,canvas.width, canvas.height);   
-  // }
+  // // background.onload = function(){
+  // //   ctx.drawImage(background,0,0,canvas.width, canvas.height);   
+  // // }
 
   
   const video = document.querySelector("#video");
@@ -39,17 +41,29 @@ window.addEventListener('DOMContentLoaded', () => {
     VideoTools.fade(video);
   };
 
+
+  const faceMesh = new FaceMesh({locateFile: (file) => {
+    return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`;
+  }});
+  faceMesh.setOptions({
+    maxNumFaces: 1,
+    refineLandmarks: true,
+    minDetectionConfidence: 0.5,
+    minTrackingConfidence: 0.5
+  });
+
+  console.log(faceMesh);
+
+
   //interval loop to redraw all applicable filters
     //redraw canvas border
 
-  video.addEventListener( "loadedmetadata", function (e) {
-    var width = this.videoWidth,
-        height = this.videoHeight;
-    console.log(width)
-    console.log(height)
-  }, false );
- 
+  // video.addEventListener( "loadedmetadata", function (e) {
+  //   var width = this.videoWidth,
+  //       height = this.videoHeight;
+  //   console.log(width)
+  //   console.log(height)
+  // }, false ); 
 
- 
 
 });

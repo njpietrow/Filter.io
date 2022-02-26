@@ -6,6 +6,7 @@
   "dependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
+    "@mediapipe/face_mesh": "^0.4.1633559619",
     "babel-loader": "^8.2.3",
     "core-js": "^3.21.1",
     "css-loader": "^6.6.0",
