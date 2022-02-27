@@ -16,11 +16,19 @@
 
   <body class="app">
     <header>
+      <div style="display: none;">
+        <img id="source"
+        src="assets/Clown_nose_large.png"
+        width="30" height="auto">
+
+      </div>
       <nav class="nav-bar">
         <div class="title-container">
           <h1 class="title">Filter.io</h1>
         </div>
-        
+        <div class="title-container">
+          <h1 class="perf"></h1>
+        </div>
         <div class="link-container">
           <a href="https://github.com/njpietrow">Github</a>
           <a href="https://www.linkedin.com/in/nickpietrow/">Personal Website</a>
@@ -44,7 +52,7 @@
           </div>
           <div class="camera-controls">
             <button class="capture">Take a picture</button>
-            <button class="webcam-toggle">Turn webcam off/on</button>
+            <button class="webcam-toggle" data-on="true">Turn webcam off/on</button>
           </div>
         </div>
       </section>
