@@ -1,7 +1,9 @@
+import {VIDEO_WIDTH,VIDEO_HEIGHT} from './video_dimensions'
+
 const VideoTools = {
   startVideo: function (videoElement) {
     navigator.getUserMedia(
-      { video: { width: 1280, height: 720 } },
+      { video: { width: VIDEO_WIDTH, height: VIDEO_HEIGHT } },
       function(mediaStream) { 
         videoElement.srcObject = mediaStream;
         videoElement.onloadedmetadata = function(e) {
@@ -24,18 +26,10 @@ const VideoTools = {
     }, 30);
   },
   stopVideo: function(){
-    navigator.mediaDevices.getUserMedia({audio: false, video: true})
-    .then(mediaStream => {
-      const videoElement = document.querySelector('#video')
-
-      for (const track of videoElement.srcObject.getTracks()) {
-        track.stop();
-      }
-      
-      mediaStream.getTracks().forEach((track) => {
-        track.stop();
-      });
-    })
+    const videoElement = document.querySelector('#video')
+    for (const track of videoElement.srcObject.getTracks()) {
+      track.stop();
+    }
   }
 }
 

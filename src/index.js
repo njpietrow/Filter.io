@@ -1,6 +1,7 @@
 import VideoTools from './scripts/video_tools';
 import DrawingUtils from './scripts/drawing_utils'
 import Controls from './scripts/controls'
+import {VIDEO_WIDTH,VIDEO_HEIGHT} from './scripts/video_dimensions'
 //Add a script for the filter class
 //Add a script(s) for button effects
 let detections = [];
@@ -13,8 +14,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   
   canvasElement.width = window.innerWidth * (.8);
-  if (canvasElement.width > 700) canvasElement.width = 700;
-  canvasElement.height = canvasElement.width * (720/1280);
+  if (canvasElement.width > VIDEO_WIDTH) canvasElement.width = VIDEO_WIDTH;
+  canvasElement.height = canvasElement.width * (VIDEO_HEIGHT/VIDEO_WIDTH);
   
   videoElement.oncanplay = function() {
     // set opacity of visible elements to 0 to fade them in.
@@ -26,7 +27,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   
   function drawFaces(results) {
     detections = results;
-    DrawingUtils.draw(canvasCtx, detections, "drawPoints");
+    // DrawingUtils.draw(canvasCtx, detections, "drawPoints");
+    DrawingUtils.draw(canvasCtx, detections, "drawImage");
   }
 
   const faceMesh = new FaceMesh({locateFile: (file) => {
@@ -44,8 +46,8 @@ window.addEventListener('DOMContentLoaded', async () => {
     onFrame: async () => {
       await faceMesh.send({image: videoElement});
     },
-    width: 1280,
-    height: 720
+    width: VIDEO_WIDTH,
+    height: VIDEO_HEIGHT
   });
   camera.start();
 

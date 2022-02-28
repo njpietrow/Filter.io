@@ -1,15 +1,35 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+@import url(http://fonts.cdnfonts.com/css/sf-alien-encounters);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
+  \*****************************************************************************************************************************************/
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
+  align-self: center;
+  max-width: 1000px;
+  min-width: 800px;
+}
+
+.filter-controls {
+  max-width: 1000px;
+  min-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .link-container {
@@ -17,20 +37,23 @@ nav {
   align-items: center;
 }
 
-.filter-controls {
-  display: flex;
-  justify-content: space-between;
+.grid {
+  height: 100%;
   width: 100%;
+  background: red;
+  transform: perspective(10px) rotateX(1deg);
+  margin: 50px;
 }
 
 .app {
   margin: auto;
-  width: 90%;
+  width: 100%;
 }
 
 .video-background {
-  height: 394px;
-  width: 700px;
+  height: 480px;
+  width: 640px;
+  border: 5px solid black;
   z-index: -1;
 }
 
@@ -44,7 +67,6 @@ video, canvas, .video-background {
 }
 
 canvas {
-  border: 1px solid orange;
   z-index: 1;
 }
 
@@ -57,18 +79,59 @@ section {
   width: 90%;
 }
 
+nav {
+  padding: 15px;
+}
+
+a {
+  font-size: 20px;
+}
+
+a + a {
+  margin-left: 10px;
+}
+
 .content {
   background-color: rgba(128, 128, 128, 0.392);
 }
 
-.nav-bar {
-  background-color: #9d7bfa;
+header {
+  background: linear-gradient(#0D0221 0%, #45125e 40%, #A22561 80%, #FF3864 100%);
+  box-shadow: 0 0 50px purple, 0 0 100px purple;
+  text-shadow: 0 0 6px #556DC8, 0 0 8px #E68E36;
 }
 
-.link-container, .title-container {
-  background-color: orange;
+.title-container, a {
+  color: #E68E36;
 }
 
 .video-background {
   background-color: black;
+  z-index: 1;
+}
+
+#video {
+  z-index: 2;
+}
+
+#game-canvas {
+  z-index: 3;
+}
+
+body {
+  font-family: "SF Alien Encounters", sans-serif;
+  font-family: "SF Alien Encounters Solid", sans-serif;
+  background-color: black;
+  letter-spacing: 0.05rem;
+  font-style: italic;
+}
+
+.filter-controls {
+  text-shadow: 0 0 6px #556DC8, 0 0 8px #E68E36;
+  color: #E68E36;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 0;
 }

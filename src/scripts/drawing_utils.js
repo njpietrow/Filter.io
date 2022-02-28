@@ -1,5 +1,3 @@
-import { FACEMESH_LEFT_EYE, FACE_GEOMETRY } from "@mediapipe/face_mesh";
-
 const DrawingUtils = {
   draw: function(canvasCtx, detections, functionName){
     //save the context of 2d plane before transforming it to draw
@@ -21,9 +19,10 @@ const DrawingUtils = {
   let ypos = landmarks[1].y*canvas.height;
   var img = new Image;
   img.src = "assets/Clown_nose_large.png";
+  const dim = 90; //90 is the hardcoded height of the image.
   canvasCtx.drawImage(img,
-              xpos-60/2, //60 is the hardcoded height of the image.
-              ypos-60/2,60,60)
+              xpos-90/2, 
+              ypos-90/2,90,90)
   },
 
   drawPoints: function(canvasCtx, landmarks){

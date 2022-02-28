@@ -1,3 +1,16 @@
+$purple: #461E52;
+$pink: #DD517F;
+$orange: #E68E36;
+$blue: #556DC8;
+$light-blue: #7998EE;
+
+@import url('http://fonts.cdnfonts.com/css/sf-alien-encounters');
+
+// @font-face {
+//   font-family: 'Alien Encounters', sans-serif;
+//   src: url("http://fonts.cdnfonts.com/css/alien-encounters");
+// }
+
 .content {
   // background-color: rgba(79, 79, 79, 0.468);
   // background-image: url("./../../assets/poster_board_background.png");
@@ -6,14 +19,56 @@
   background-color: rgba(128, 128, 128, 0.392);
 }
 
-.nav-bar {
-  background-color: rgb(157, 123, 250);
+header {
+  background: linear-gradient( #0D0221 0%, #45125e 40%, #A22561 80%, #FF3864 100% );
+  box-shadow: 0 0 50px purple, 0 0 100px purple;
+  text-shadow:
+  0 0 6px #556DC8,
+  0 0 8px #E68E36;
+  // box-shadow: 0 8px 6px -6px black;
 }
 
-.link-container, .title-container {
-  background-color: orange;
+.title-container, a {
+  // background-color: orange;
+  color: #E68E36;
 }
 
 .video-background {
   background-color: black;
+  z-index: 1;
+}
+
+#video {
+  z-index: 2;
+}
+
+#game-canvas {
+  z-index: 3;
+  // border: 1px solid $blue;
+  // box-shadow:
+  // 0 0 5px 10px rgb(255 255 255 / 0.3), 
+  // 0 0 20px 30px rgb(255 0 255 / 0.6), 
+  // 0 0 30px 40px rgb(0 255 255 / 0.7);  
+}
+
+body {
+  font-family: 'SF Alien Encounters', sans-serif;
+  font-family: 'SF Alien Encounters Solid', sans-serif;
+  // font-family: 'Times New Roman', Times, serif;
+  background-color: black;
+  letter-spacing: .05rem;
+  font-style: italic;
+  // font-kerning: normal;
+}
+
+.filter-controls {
+  text-shadow:
+  0 0 6px #556DC8,
+  0 0 8px #E68E36;
+  color: #E68E36;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 0;
 }

@@ -1,0 +1,4 @@
+const VIDEO_WIDTH = 640;
+const VIDEO_HEIGHT = 480;
+
+export {VIDEO_WIDTH, VIDEO_HEIGHT}

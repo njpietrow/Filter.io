@@ -4,9 +4,25 @@
   align-items: center;
 }
 
+header{
+  display: flex;
+  justify-content: center;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
+  align-self: center;
+  max-width: 1000px;
+  min-width: 800px;
+}
+
+.filter-controls {
+  max-width: 1000px;
+  min-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .link-container {
@@ -14,22 +30,24 @@ nav {
   align-items: center;
 }
 
-.filter-controls {
-  // display: block;
-  display: flex;
-  justify-content: space-between;
+.grid {
+  height: 100%;
   width: 100%;
+  background: red;
+  transform: perspective(10px) rotateX(1deg);
+  margin: 50px;
 }
 
 .app {
   margin: auto;
-  width: 90%;
+  width: 100%;
 }
 
 // make this video background dynamic
 .video-background { 
-  height: 394px;
-  width: 700px;
+  height: 480px;
+  width: 640px;
+  border: 5px solid black;
   z-index: -1;
 }
 
@@ -46,7 +64,6 @@ video, canvas, .video-background {
 }
 
 canvas {
-  border: 1px solid orange;
   z-index: 1;
 }
 
@@ -59,5 +76,18 @@ section {
   align-items: flex-end;
   height: 600px;
   width: 90%;
+}
+
+
+nav{
+  padding: 15px;
+}
+
+a {
+  font-size: 20px;
+}
+
+a + a {
+  margin-left: 10px;
 }
 
