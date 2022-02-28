@@ -46,12 +46,12 @@ const DrawingUtils = {
     let ypos = landmarks[1].y*canvas.height;
     var img = new Image;
     img.src = "assets/mask.png";
-    const dim = 180;
-
+    const dim = canvas.width*mutations.scale*2.4;
+    console.log(mutations.scale)
     canvasCtx.save(); 
     canvasCtx.translate(xpos, ypos);
-    canvasCtx.rotate(mutations.rotation);
-    canvasCtx.drawImage(img, -(dim/2), -(dim/2)+15,dim,dim);
+    canvasCtx.rotate(mutations.roll);
+    canvasCtx.drawImage(img, -(dim/2), -(dim/2)+20,dim,dim);
     canvasCtx.restore(); 
   },
   
@@ -105,7 +105,9 @@ const DrawingUtils = {
       (eyeMidPoint.x - upperLip.x) 
     );
 
-    //draw key landmarks
+    const scale = this.distance(leftEyeCorner, rightEyeCorner); 
+
+/*     //draw key landmarks
     this.drawPoints(canvasCtx,
       {leftEyeCorner, rightEyeCorner, upperLip, eyeMidPoint, originPoint});
       
@@ -113,10 +115,14 @@ const DrawingUtils = {
     drawConnectors(canvasCtx,
       {0: leftEyeCorner, 1: rightEyeCorner, 2: upperLip, 3: eyeMidPoint, 4: originPoint},
       [[0,1],[2,3],[2,4]],
-      {color: 'red', lineWidth: 1})
+      {color: 'red', lineWidth: 1}) */
     
     //return roll and pitch angles in radians 
-    return {roll: roll, pitch: pitch, yaw: yaw}
+    return {roll: roll, scale: scale}
+  },
+
+  distance: function(pos1, pos2){
+    return Math.sqrt((pos1.x - pos2.x) ** 2 + (pos1.y - pos2.y) ** 2 +(pos1.z - pos2.z) ** 2)
   }
 
 }
