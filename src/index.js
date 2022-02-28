@@ -11,6 +11,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   const webcamToggle = document.querySelector('.webcam-toggle');
 
   
+
+  
   canvasElement.width = window.innerWidth * (.8);
   if (canvasElement.width > VIDEO_WIDTH) canvasElement.width = VIDEO_WIDTH;
   canvasElement.height = canvasElement.width * (VIDEO_HEIGHT/VIDEO_WIDTH);
@@ -28,8 +30,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   function drawFaces(detections) {
     
     // DrawingUtils.draw(canvasCtx, detections, "drawPoints");
-    // DrawingUtils.draw(canvasCtx, detections, "drawClownNose");
-    DrawingUtils.draw(canvasCtx, detections, "drawFilter");
+    // DrawingUtils.draw(canvasCtx, detections, "drawFilter", "nose");
+    DrawingUtils.draw(canvasCtx, detections, "drawFilter", "mask");
   }
 
   const faceMesh = new FaceMesh({locateFile: (file) => {
@@ -53,9 +55,5 @@ window.addEventListener('DOMContentLoaded', async () => {
   camera.start();
 
   Controls.toggleVideo(webcamToggle, canvasCtx, videoElement);
-
- 
-
-  // 
 
 });

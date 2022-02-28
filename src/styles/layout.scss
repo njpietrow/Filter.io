@@ -52,7 +52,7 @@ nav {
 }
 
 
-video, canvas, .video-background {
+canvas, .video-background {
   display: block;
   margin: 0 auto;
   position: absolute;
@@ -61,6 +61,17 @@ video, canvas, .video-background {
   // width: 80%;
   // height: 80%;
   transform: translate(-50%, -50%);
+}
+
+video {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 10%;
+  transform: scaleX(-1);
+  // -webkit-transform: scaleX(-1);
+  // transform: translate(-50%, -50%);
+  // transform: translate(-50%, -50%);
 }
 
 canvas {
@@ -77,7 +88,6 @@ section {
   height: 600px;
   width: 90%;
 }
-
 
 nav{
   padding: 15px;
