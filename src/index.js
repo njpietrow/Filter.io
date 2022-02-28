@@ -11,6 +11,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   const webcamToggle = document.querySelector('.webcam-toggle');
 
   
+
+  
   canvasElement.width = window.innerWidth * (.8);
   if (canvasElement.width > VIDEO_WIDTH) canvasElement.width = VIDEO_WIDTH;
   canvasElement.height = canvasElement.width * (VIDEO_HEIGHT/VIDEO_WIDTH);
@@ -53,9 +55,5 @@ window.addEventListener('DOMContentLoaded', async () => {
   camera.start();
 
   Controls.toggleVideo(webcamToggle, canvasCtx, videoElement);
-
- 
-
-  // 
 
 });

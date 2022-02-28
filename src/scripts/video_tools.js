@@ -29,11 +29,12 @@ const VideoTools = {
 
   stopVideo: function(){
     const videoElement = document.querySelector('#video')
-    for (const track of videoElement.srcObject.getTracks()) {
-      track.stop();
-    }
+    videoElement.srcObject.getTracks()[0].stop()
+    // for (const track of videoElement.srcObject.getTracks()) {
+    //   track.stop();
+    // }
   }
-  
+
 }
 
 export default VideoTools;
