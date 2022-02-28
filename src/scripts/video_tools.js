@@ -1,6 +1,7 @@
 import {VIDEO_WIDTH,VIDEO_HEIGHT} from './video_dimensions'
 
 const VideoTools = {
+
   startVideo: function (videoElement) {
     navigator.getUserMedia(
       { video: { width: VIDEO_WIDTH, height: VIDEO_HEIGHT } },
@@ -15,6 +16,7 @@ const VideoTools = {
       }
     )
   },
+
   fadeIn: function(videoElement) {
     let op = 0;
     let timer = setInterval(function() {
@@ -24,14 +26,14 @@ const VideoTools = {
         op += op * 0.1;
     }, 30);
   },
+
   stopVideo: function(){
     const videoElement = document.querySelector('#video')
     for (const track of videoElement.srcObject.getTracks()) {
       track.stop();
     }
   }
+  
 }
 
 export default VideoTools;
-// only one export default allowed per file
-// export {VideoTools}

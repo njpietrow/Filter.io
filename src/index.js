@@ -3,8 +3,6 @@ import DrawingUtils from './scripts/drawing_utils'
 import Controls from './scripts/controls'
 import {VIDEO_WIDTH,VIDEO_HEIGHT} from './scripts/video_dimensions'
 //Add a script for the filter class
-//Add a script(s) for button effects
-let detections = [];
 
 window.addEventListener('DOMContentLoaded', async () => {
   const videoElement = document.querySelector("#video");
@@ -25,10 +23,13 @@ window.addEventListener('DOMContentLoaded', async () => {
     VideoTools.fadeIn(canvasElement)
   };
   
-  function drawFaces(results) {
-    detections = results;
+  /* callback for facemesh onResults function to operate on the resulting
+  face detections */
+  function drawFaces(detections) {
+    
     // DrawingUtils.draw(canvasCtx, detections, "drawPoints");
-    DrawingUtils.draw(canvasCtx, detections, "drawImage");
+    // DrawingUtils.draw(canvasCtx, detections, "drawClownNose");
+    DrawingUtils.draw(canvasCtx, detections, "drawFilter");
   }
 
   const faceMesh = new FaceMesh({locateFile: (file) => {
