@@ -64,21 +64,28 @@ const DrawingUtils = {
     const rotation = Math.atan(eyeSlope);
     // console.log(eyeAngle);
 
-    //tilt given angle from upper lip to eye line comared to vertical
+    //midpoint between eye landmarks
     const eyeMidPoint = {x: (rightEyeCorner.x + leftEyeCorner.x)/2,
                          y: (rightEyeCorner.y + leftEyeCorner.y)/2,
                          z: (rightEyeCorner.z + leftEyeCorner.z)/2}
+
+    //slope from upper lip to eyeMidPoint 
     const faceSlope = ((eyeMidPoint.z - upperLip.z)/
                        (eyeMidPoint.y - upperLip.y));
+
+    //calculate angle between face slop and vertical
     const skew = Math.atan(faceSlope);
-    // console.log(skew);
-    const originPoint = {x: .5,
+
+    //get frame of reference to display slopes
+    const originPoint = {x: upperLip.x,
                          y: eyeMidPoint.y,
                          z: upperLip.z}
+
     // drawConnectors(canvasCtx, landmarks, FACEMESH_TESSELATION,
     //   {color: '#C0C0C070', lineWidth: 1});
     // console.log({leftEyeCorner, rightEyeCorner, upperLip, eyeMidPoint});
     // console.log(landmarks);
+    
     drawConnectors(canvasCtx,{0: leftEyeCorner, 1: rightEyeCorner, 2: upperLip, 3: eyeMidPoint, 4: originPoint},[[0,1],[2,3],[2,4]],{color: 'red', lineWidth: 1})
     this.drawPoints(canvasCtx,{leftEyeCorner, rightEyeCorner, upperLip, eyeMidPoint, originPoint});
   }
