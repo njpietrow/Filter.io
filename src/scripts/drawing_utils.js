@@ -81,13 +81,13 @@ const DrawingUtils = {
                          y: eyeMidPoint.y,
                          z: upperLip.z}
 
-    // drawConnectors(canvasCtx, landmarks, FACEMESH_TESSELATION,
-    //   {color: '#C0C0C070', lineWidth: 1});
-    // console.log({leftEyeCorner, rightEyeCorner, upperLip, eyeMidPoint});
-    // console.log(landmarks);
-    
-    drawConnectors(canvasCtx,{0: leftEyeCorner, 1: rightEyeCorner, 2: upperLip, 3: eyeMidPoint, 4: originPoint},[[0,1],[2,3],[2,4]],{color: 'red', lineWidth: 1})
+    //draw key landmarks
     this.drawPoints(canvasCtx,{leftEyeCorner, rightEyeCorner, upperLip, eyeMidPoint, originPoint});
+    //draw lines beteen key points.
+    drawConnectors(canvasCtx,{0: leftEyeCorner, 1: rightEyeCorner, 2: upperLip, 3: eyeMidPoint, 4: originPoint},[[0,1],[2,3],[2,4]],{color: 'red', lineWidth: 1})
+    
+    //return rotation and skew angles in radians
+    return {rotation: rotation, skew: skew}
   }
 
 }
