@@ -1,3 +1,5 @@
+import { FACEMESH_RIGHT_EYE, FACEMESH_TESSELATION } from "@mediapipe/face_mesh";
+
 const DrawingUtils = {
 
   draw: function(canvasCtx, detections, functionName){
@@ -33,41 +35,52 @@ const DrawingUtils = {
   },
 
   drawFilter: function(canvasCtx,landmarks){
-    let leftEyeCorner = landmarks[130];
-    let rightEyeCorner = landmarks[359];
-    let upperLip = landmarks[164];
-    this.drawPoints(canvasCtx,{leftEyeCorner,rightEyeCorner,upperLip});
-    this.calculateSkew(landmarks);
+    this.calculateSkew(canvasCtx, landmarks);
   },
   
   drawPoints: function(canvasCtx, landmarks){
     for (const [idx,dot] of Object.entries(landmarks)){  
       let canvas = canvasCtx.canvas
-      let xpos = dot.x*canvas.width;
-      let ypos = dot.y*canvas.height;
+      let xpos = dot.x * canvas.width;
+      let ypos = dot.y * canvas.height;
       canvasCtx.beginPath()
       canvasCtx.arc(xpos, ypos, 1, 0, 2 * Math.PI,true);
       canvasCtx.fillStyle = 'white';
       canvasCtx.fill();
-      canvasCtx.font = "6px Arial";
-      canvasCtx.fillStyle = 'orange';
+      // canvasCtx.font = "6px Arial";
+      // canvasCtx.fillStyle = 'orange';
       // canvasCtx.fillText(idx, xpos, ypos);
     }
   },
   
-  calculateSkew: function(landmarks){
-    let leftEyeCorner = landmarks[130];
-    let rightEyeCorner = landmarks[359];
-    let upperLip = landmarks[164];
+  calculateSkew: function(canvasCtx, landmarks){
+    const leftEyeCorner = landmarks[130];
+    const rightEyeCorner = landmarks[359];
+    const upperLip = landmarks[164];
     //use 0 for middle, 359 for top right, and 130 for top left.
     //rotation given angle to the horizon using line from the eyes
-    let eyeSlope = ((rightEyeCorner.y - leftEyeCorner.y)/
-    (rightEyeCorner.x - leftEyeCorner.x));
-    let rotation = Math.atan(eyeSlope);
+    const eyeSlope = ((rightEyeCorner.y - leftEyeCorner.y)/
+                      (rightEyeCorner.x - leftEyeCorner.x));
+    const rotation = Math.atan(eyeSlope);
     // console.log(eyeAngle);
 
     //tilt given angle from upper lip to eye line comared to vertical
-
+    const eyeMidPoint = {x: (rightEyeCorner.x + leftEyeCorner.x)/2,
+                         y: (rightEyeCorner.y + leftEyeCorner.y)/2,
+                         z: (rightEyeCorner.z + leftEyeCorner.z)/2}
+    const faceSlope = ((eyeMidPoint.z - upperLip.z)/
+                       (eyeMidPoint.y - upperLip.y));
+    const skew = Math.atan(faceSlope);
+    // console.log(skew);
+    const originPoint = {x: .5,
+                         y: eyeMidPoint.y,
+                         z: upperLip.z}
+    // drawConnectors(canvasCtx, landmarks, FACEMESH_TESSELATION,
+    //   {color: '#C0C0C070', lineWidth: 1});
+    // console.log({leftEyeCorner, rightEyeCorner, upperLip, eyeMidPoint});
+    // console.log(landmarks);
+    drawConnectors(canvasCtx,{0: leftEyeCorner, 1: rightEyeCorner, 2: upperLip, 3: eyeMidPoint, 4: originPoint},[[0,1],[2,3],[2,4]],{color: 'red', lineWidth: 1})
+    this.drawPoints(canvasCtx,{leftEyeCorner, rightEyeCorner, upperLip, eyeMidPoint, originPoint});
   }
 
 }
