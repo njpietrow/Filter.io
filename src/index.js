@@ -30,8 +30,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   function drawFaces(detections) {
     
     // DrawingUtils.draw(canvasCtx, detections, "drawPoints");
-    // DrawingUtils.draw(canvasCtx, detections, "drawClownNose");
-    DrawingUtils.draw(canvasCtx, detections, "drawFilter");
+    // DrawingUtils.draw(canvasCtx, detections, "drawFilter", "nose");
+    DrawingUtils.draw(canvasCtx, detections, "drawFilter", "mask");
   }
 
   const faceMesh = new FaceMesh({locateFile: (file) => {

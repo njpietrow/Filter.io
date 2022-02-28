@@ -18,6 +18,10 @@ const Controls = {
         VideoTools.startVideo(videoElement);
       }
     });
+  },
+
+  captureImage: function(webcamToggle, canvasCtx, videoElement){
+    
   }
 }
 

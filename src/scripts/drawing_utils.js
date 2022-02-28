@@ -2,7 +2,7 @@ import { DEFAULT_SKEW } from "./video_dimensions";
 
 const DrawingUtils = {
 
-  draw: function(canvasCtx, detections, functionName){
+  draw: function(canvasCtx, detections, functionName, filterName){
     //save the context of 2d plane before transforming it to draw
     canvasCtx.save(); 
     //get the canvas element out of the context
@@ -17,7 +17,7 @@ const DrawingUtils = {
       //interate over each face
       for (const landmarks of detections.multiFaceLandmarks) { 
         //call the specific drawing function with the landmarks per face
-        this[functionName](canvasCtx, landmarks);
+        this[functionName](canvasCtx, landmarks, filterName);
       }
     }
     //revert back to the last saved context on the stack
@@ -37,7 +37,7 @@ const DrawingUtils = {
                         ypos-dim/2,dim,dim)
   },
 
-  drawFilter: function(canvasCtx,landmarks){
+  drawFilter: function(canvasCtx,landmarks, type){
     let mutations = this.calculateSkew(canvasCtx, landmarks);
     // console.log(mutations);
 
@@ -45,13 +45,13 @@ const DrawingUtils = {
     let xpos = landmarks[1].x*canvas.width;
     let ypos = landmarks[1].y*canvas.height;
     var img = new Image;
-    img.src = "assets/mask.png";
+    img.src = `assets/${type}.png`;
     const dim = canvas.width*mutations.scale*2.4;
-    console.log(mutations.scale)
+    // console.log(mutations.scale)
     canvasCtx.save(); 
     canvasCtx.translate(xpos, ypos);
     canvasCtx.rotate(mutations.roll);
-    canvasCtx.drawImage(img, -(dim/2), -(dim/2)+20,dim,dim);
+    canvasCtx.drawImage(img, -(dim/2), -(dim/2)+15,dim,dim);
     canvasCtx.restore(); 
   },
   
@@ -64,9 +64,6 @@ const DrawingUtils = {
       canvasCtx.arc(xpos, ypos, 1, 0, 2 * Math.PI,true);
       canvasCtx.fillStyle = 'white';
       canvasCtx.fill();
-      // canvasCtx.font = "6px Arial";
-      // canvasCtx.fillStyle = 'orange';
-      // canvasCtx.fillText(idx, xpos, ypos);
     }
   },
   
@@ -105,7 +102,7 @@ const DrawingUtils = {
       (eyeMidPoint.x - upperLip.x) 
     );
 
-    const scale = this.distance(leftEyeCorner, rightEyeCorner); 
+    const scale = this.distance(rightEyeCorner,leftEyeCorner); 
 
 /*     //draw key landmarks
     this.drawPoints(canvasCtx,
@@ -122,7 +119,7 @@ const DrawingUtils = {
   },
 
   distance: function(pos1, pos2){
-    return Math.sqrt((pos1.x - pos2.x) ** 2 + (pos1.y - pos2.y) ** 2 +(pos1.z - pos2.z) ** 2)
+    return Math.sqrt((pos1.x - pos2.x) ** 2 + (pos1.y - pos2.y) ** 2 + (pos1.z - pos2.z) ** 2)
   }
 
 }
