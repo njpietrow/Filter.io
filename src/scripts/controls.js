@@ -21,7 +21,7 @@ const Controls = {
   },
 
   captureImage: function(webcamToggle, canvasCtx, videoElement){
-    
+    console.log("capturing");
   }
 }
 
