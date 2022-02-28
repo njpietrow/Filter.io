@@ -9,7 +9,6 @@ const VideoTools = {
         videoElement.onloadedmetadata = function(e) {
           videoElement.play();
         };
-        console.log(mediaStream.getTracks())
       },
       function(err) {
         console.error(err)
