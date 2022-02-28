@@ -57,12 +57,14 @@ const DrawingUtils = {
     const leftEyeCorner = landmarks[130];
     const rightEyeCorner = landmarks[359];
     const upperLip = landmarks[164];
+
     //use 0 for middle, 359 for top right, and 130 for top left.
     //rotation given angle to the horizon using line from the eyes
     const eyeSlope = ((rightEyeCorner.y - leftEyeCorner.y)/
                       (rightEyeCorner.x - leftEyeCorner.x));
+    
+    //angle of eye connector to x axis
     const rotation = Math.atan(eyeSlope);
-    // console.log(eyeAngle);
 
     //midpoint between eye landmarks
     const eyeMidPoint = {x: (rightEyeCorner.x + leftEyeCorner.x)/2,
