@@ -3,7 +3,7 @@ import VideoTools from './video_tools';
 const Controls = {
   toggleVideo: function(webcamToggle, canvasCtx, videoElement){
     let canvas = canvasCtx.canvas;
-    webcamToggle.addEventListener('click',(e) => {
+    webcamToggle.addEventListener('click',async (e) => {
       let button = e.target
       if(button.hasAttribute("data-on")){
         button.toggleAttribute("data-on");
@@ -12,7 +12,6 @@ const Controls = {
       } else {
         button.toggleAttribute("data-on");
         VideoTools.startVideo(videoElement);
-        canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
       }
     });
   }

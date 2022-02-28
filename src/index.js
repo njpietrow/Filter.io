@@ -1,6 +1,6 @@
 import VideoTools from './scripts/video_tools';
 import DrawingUtils from './scripts/drawing_utils'
-import Conrols from './scripts/controls'
+import Controls from './scripts/controls'
 //Add a script for the filter class
 //Add a script(s) for button effects
 let detections = [];
@@ -17,13 +17,14 @@ window.addEventListener('DOMContentLoaded', async () => {
   canvasElement.height = canvasElement.width * (720/1280);
   
   videoElement.oncanplay = function() {
-    videoElement.style.opacity = 0;
+    // set opacity of visible elements to 0 to fade them in.
+    videoElement.style.opacity = 0; 
+    canvasElement.style.opacity = 0;
     VideoTools.fadeIn(videoElement); //video is playing in the background behind the canvas.
     VideoTools.fadeIn(canvasElement)
   };
   
   function drawFaces(results) {
-    // return
     detections = results;
     DrawingUtils.draw(canvasCtx, detections, "drawPoints");
   }
@@ -48,7 +49,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   });
   camera.start();
 
-  Conrols.toggleVideo(webcamToggle, canvasCtx, videoElement);
+  Controls.toggleVideo(webcamToggle, canvasCtx, videoElement);
 
  
 

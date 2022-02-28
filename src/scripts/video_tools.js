@@ -2,11 +2,12 @@ const VideoTools = {
   startVideo: function (videoElement) {
     navigator.getUserMedia(
       { video: { width: 1280, height: 720 } },
-      function(stream) { 
-        videoElement.srcObject = stream;
+      function(mediaStream) { 
+        videoElement.srcObject = mediaStream;
         videoElement.onloadedmetadata = function(e) {
           videoElement.play();
         };
+        console.log(mediaStream.getTracks())
       },
       function(err) {
         console.error(err)
@@ -25,10 +26,15 @@ const VideoTools = {
   stopVideo: function(){
     navigator.mediaDevices.getUserMedia({audio: false, video: true})
     .then(mediaStream => {
-      document.querySelector('#video').srcObject = mediaStream;
-      // Stop the stream after 5 seconds
-        const tracks = mediaStream.getTracks()
-        tracks[0].stop()
+      const videoElement = document.querySelector('#video')
+
+      for (const track of videoElement.srcObject.getTracks()) {
+        track.stop();
+      }
+      
+      mediaStream.getTracks().forEach((track) => {
+        track.stop();
+      });
     })
   }
 }
