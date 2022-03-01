@@ -2,6 +2,7 @@ import VideoTools from './scripts/video_tools';
 import DrawingUtils from './scripts/drawing_utils'
 import Controls from './scripts/controls'
 import {VIDEO_WIDTH,VIDEO_HEIGHT} from './scripts/video_dimensions'
+import FM from './scripts/fm_wrapper'
 //Add a script for the filter class
 
 window.addEventListener('DOMContentLoaded', async () => {
@@ -24,32 +25,14 @@ window.addEventListener('DOMContentLoaded', async () => {
   
   /* callback for facemesh onResults function to operate on the resulting
   face detections */
-  function drawFaces(detections) {
+  // function drawFaces(detections) {
     
-    // DrawingUtils.draw(canvasCtx, detections, "drawClownNose", "mask");
-    // DrawingUtils.draw(canvasCtx, detections, "drawFilter", "mask");
-    DrawingUtils.draw(canvasCtx, detections, "drawMask", "mask");
-  }
+  //   // DrawingUtils.draw(canvasCtx, detections, "drawClownNose");
+  //   // DrawingUtils.draw(canvasCtx, detections, "drawFilter");
+  //   DrawingUtils.draw(canvasCtx, detections, "mask");
+  // }
 
-  const faceMesh = new FaceMesh({locateFile: (file) => {
-    return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`;
-  }});
-  faceMesh.setOptions({
-    maxNumFaces: 3,
-    refineLandmarks: true,
-    minDetectionConfidence: 0.5,
-    minTrackingConfidence: 0.5
-  });
-  faceMesh.onResults(drawFaces);
-
-  const camera = new Camera(videoElement, {
-    onFrame: async () => {
-      await faceMesh.send({image: videoElement});
-    },
-    width: VIDEO_WIDTH,
-    height: VIDEO_HEIGHT
-  });
-  camera.start();
+  const fm = new FM("mask")
 
   Controls.toggleVideo(canvasCtx, videoElement);
 
