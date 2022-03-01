@@ -30,8 +30,10 @@ const Controls = {
     buttons.forEach(btn => {
       btn.addEventListener('mousedown', (e) => {
         let button = e.target
-        button.style.boxShadow = "0px 0px 10px purple, 0px 0px 50px purple";
+        button.style.boxShadow = "0px 0px 10px purple, 0px 0px 50px purple, inset 0px 0px 5px #c1c1c1";
         button.style.border = "1px solid pink"
+        button.style.color = "pink"
+        button.style.transform = "scale(.97)"
       });
     });
     buttons.forEach(btn => {
@@ -39,6 +41,8 @@ const Controls = {
         let button = e.target
         button.style.boxShadow = "";
         button.style.border = "1px solid #7998EE"
+        button.style.color = "#7998EE"
+        button.style.transform = "scale(1)"
       });
     });
   

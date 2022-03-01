@@ -114,7 +114,6 @@ nav {
 .video-background {
   height: 480px;
   width: 640px;
-  border: 5px solid black;
   z-index: -1;
 }
 
@@ -176,6 +175,7 @@ header {
 
 .video-background {
   background-color: black;
+  border: 0px solid black;
   z-index: 1;
 }
 
@@ -202,11 +202,11 @@ h1 {
 
 .btn {
   background-color: #461E52;
-  color: #DD517F;
+  color: #7998EE;
   padding: 8px;
   font-size: 16px;
   border: none;
-  box-shadow: 0 0 5px purple;
+  box-shadow: 0 0 5px #7998EE;
   border: 1px solid #556DC8;
   width: 145px;
   text-align: center;
@@ -239,11 +239,17 @@ h1 {
 
 .link-container a:hover {
   text-shadow: 0 0 10px #E68E36, 0 0 12px #E68E36;
+  -webkit-transform: scale(1.1);
 }
 
-.btn:hover {
+.link-container a:active {
+  -webkit-transform: scale(0.9);
+}
+
+.btn:hover, .dropdown-content a:hover {
   box-shadow: 0 0 6px #7998EE, 0 0 8px #7998EE;
   text-shadow: 0 0 2px #556DC8;
+  -webkit-transform: scale(1.05);
 }
 
 /* Change color of dropdown links on hover */

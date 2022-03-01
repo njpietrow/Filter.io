@@ -24,6 +24,8 @@ header {
 
 .video-background {
   background-color: black;
+  border: 0px solid black;
+  // box-shadow:0 0 5px $orange;
   z-index: 1;
 }
 

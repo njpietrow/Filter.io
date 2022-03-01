@@ -1,10 +1,10 @@
 .btn {
   background-color: $purple;
-  color: $pink;
+  color: $light-blue;
   padding: 8px;
   font-size: 16px;
   border: none;
-  box-shadow: 0 0 5px purple;
+  box-shadow: 0 0 5px $light-blue;
   border: 1px solid $blue;
   width: 145px;
   text-align: center;
@@ -39,13 +39,19 @@
   text-shadow:
   0 0 10px $orange,
   0 0 12px $orange;
+  -webkit-transform: scale(1.1);
 }
 
-.btn:hover {
+.link-container a:active{
+  -webkit-transform: scale(.9);
+}
+
+.btn:hover, .dropdown-content a:hover {
   box-shadow:
   0 0 6px $light-blue,
   0 0 8px $light-blue;
-  text-shadow:  0 0 2px $blue;;
+  text-shadow: 0 0 2px $blue;
+  -webkit-transform: scale(1.05)
 }
 
 /* Change color of dropdown links on hover */
