@@ -14,6 +14,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     VideoTools.fadeIn(canvasElement)
   };
 
-  new FM();
+  const fm = new FM();
 
 });

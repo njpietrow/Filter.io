@@ -229,7 +229,7 @@ h1 {
   text-shadow: none;
 }
 
-.link-container a:hover {
+.link-container a:hover, .link-container a:focus {
   text-shadow: 0 0 6px orange, 0 0 12px #DD517F;
   -webkit-transform: scale(1.1);
 }
@@ -245,24 +245,24 @@ h1:hover {
   /* Standard */
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
   box-shadow: 0 0 6px #7998EE, 0 0 8px #7998EE;
   text-shadow: 0 0 2px #556DC8;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {
+.dropdown-content a:hover, .dropdown-content a:focus {
   background-color: #556DC8;
   box-shadow: 0 0 6px #7998EE, 0 0 8px #7998EE;
   text-shadow: 0 0 4px #DD517F;
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content {
   display: block;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
+.dropdown:hover .dropbtn, .dropdown:focus .dropbtn {
   background-color: #E68E36;
 }
