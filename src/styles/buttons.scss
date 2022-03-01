@@ -36,14 +36,21 @@
 }
 
 .link-container a:hover{
-  text-shadow:
+  /* text-shadow:
   0 0 10px $orange,
-  0 0 12px $orange;
+  0 0 12px $orange; */
+  text-shadow:  0 0 6px orange, 0 0 12px $pink;
   -webkit-transform: scale(1.1);
 }
 
 .link-container a:active{
-  -webkit-transform: scale(.9);
+  -webkit-transform: scale(.95);
+}
+
+h1:hover {
+  text-shadow:  0 0 2px orange, 0 0 12px $pink;
+  -webkit-transform: scale(1.03);
+  user-select: none; /* Standard */
 }
 
 .btn:hover, .dropdown-content a:hover {
@@ -57,6 +64,7 @@
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   background-color: gray;
+  color: $light-blue;
 }
 
 /* Show the dropdown menu on hover */

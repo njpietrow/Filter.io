@@ -29,23 +29,28 @@ const Controls = {
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(btn => {
       btn.addEventListener('mousedown', (e) => {
-        let button = e.target
+        let button = e.target;
         button.style.boxShadow = "0px 0px 10px purple, 0px 0px 50px purple, inset 0px 0px 5px #c1c1c1";
-        button.style.border = "1px solid pink"
-        button.style.color = "pink"
-        button.style.transform = "scale(.97)"
+        button.style.border = "1px solid pink";
+        button.style.color = "pink";
+        button.style.transform = "scale(.97)";
       });
     });
     buttons.forEach(btn => {
       btn.addEventListener('mouseup', (e) => {
-        let button = e.target
+        let button = e.target;
         button.style.boxShadow = "";
-        button.style.border = "1px solid #7998EE"
-        button.style.color = "#7998EE"
-        button.style.transform = "scale(1)"
+        button.style.border = "1px solid #7998EE";
+        button.style.color = "#7998EE";
+        button.style.transform = "scale(1)";
       });
     });
-  
+    const filterOptions = document.querySelectorAll('.filter-select');
+    filterOptions.forEach(opt => {
+      opt.addEventListener('mousedown', (e) => {
+        let filter = e.targetl
+      });
+    });
   }
 }
 

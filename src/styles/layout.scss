@@ -27,26 +27,13 @@ nav {
 }
 
 .btn-container {
-  margin-bottom: 10px;
+  margin-bottom: 1.2em;
 }
 
 
 .link-container {
   display: flex;
   align-items: center;
-}
-
-.grid {
-  height: 100%;
-  width: 100%;
-  background: red;
-  transform: perspective(10px) rotateX(1deg);
-  margin: 50px;
-}
-
-.app {
-  margin: auto;
-  width: 100%;
 }
 
 // make this video background dynamic
@@ -66,17 +53,17 @@ canvas, .video-background {
   left: 50%;
   // width: 80%;
   // height: 80%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -55%);
 }
 
 video {
   display: block;
   margin: 0 auto;
   position: absolute;
-  top: 10%;
   transform: scaleX(-1);
+  top: 4.5%;
   // -webkit-transform: scaleX(-1);
-  // transform: translate(-50%, -50%);
+  // transform: translate(-0%, -50%);
   // transform: translate(-50%, -50%);
 }
 
@@ -91,7 +78,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 600px;
+  height: 580px;
   width: 90%;
 }
 

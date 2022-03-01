@@ -53,7 +53,8 @@ const DrawingUtils = {
   
   drawMask: function(canvasCtx, landmarks){
     drawConnectors(canvasCtx, landmarks, FACEMESH_TESSELATION,
-      {color: 'black', lineWidth: 1});
+      {color: 'night', lineWidth: 1});
+    drawRectangle(canvasCtx, {landmarks})
   },
   
   calculateSkew: function(canvasCtx, landmarks){
