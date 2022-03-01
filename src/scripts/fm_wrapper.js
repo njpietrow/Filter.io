@@ -7,7 +7,6 @@ class FM {
     this.canvasElement = document.querySelector("#game-canvas");
     this.canvasCtx = this.canvasElement.getContext('2d');
     this.filterName = filterName;
-    console.log(this.videoElement)
 
     this.faceMesh = new FaceMesh({locateFile: (file) => {
       return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`;
@@ -30,11 +29,16 @@ class FM {
     this.camera.start();
   }
 
+  /* recall facemesh onResults function with the updated callback function
+  to draw the new filter on the canvas */
+  replaceFilter(filterName) {
+    this.filterName = filterName;
+    this.faceMesh.onResults(this.drawFaces.bind(this));
+  }
+
+  /* callback for facemesh onResults function to operate on the resulting
+  face detections */
   drawFaces(detections) {
-    
-    // DrawingUtils.draw(canvasCtx, detections, "drawClownNose", "mask");
-    // DrawingUtils.draw(canvasCtx, detections, "drawFilter", "mask");
-    // DrawingUtils.draw(canvasCtx, detections, "mask");
     DrawingUtils.draw(this.canvasCtx, detections, this.filterName);
   }
 }

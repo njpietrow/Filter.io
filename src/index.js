@@ -25,17 +25,13 @@ window.addEventListener('DOMContentLoaded', async () => {
   
   /* callback for facemesh onResults function to operate on the resulting
   face detections */
-  // function drawFaces(detections) {
-    
-  //   // DrawingUtils.draw(canvasCtx, detections, "drawClownNose");
-  //   // DrawingUtils.draw(canvasCtx, detections, "drawFilter");
-  //   DrawingUtils.draw(canvasCtx, detections, "mask");
-  // }
 
-  const fm = new FM("mask")
+  const fm = new FM("mask");
+
+
+  // fm.replaceFilter("covidMask");
 
   Controls.toggleVideo(canvasCtx, videoElement);
-
-  Controls.clickAnimation()
+  Controls.clickAnimation(fm)
 
 });

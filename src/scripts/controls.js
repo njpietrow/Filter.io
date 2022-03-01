@@ -24,7 +24,7 @@ const Controls = {
     console.log("capturing");
   },
 
-  clickAnimation: function(){
+  clickAnimation: function(faceMesh){
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(btn => {
       btn.addEventListener('mousedown', (e) => {
@@ -50,7 +50,7 @@ const Controls = {
       opt.addEventListener('mousedown', (e) => {
         let filter = e.target;
         let fName = filter.getAttribute("value");
-        console.log(fName);
+        // faceMesh.
       });
     });
   }
