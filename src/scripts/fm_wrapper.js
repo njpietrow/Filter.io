@@ -1,4 +1,5 @@
 import DrawingUtils from "./drawing_utils";
+import Controls from "./controls";
 import {VIDEO_WIDTH,VIDEO_HEIGHT} from './video_dimensions'
 
 class FM {
@@ -27,6 +28,8 @@ class FM {
       height: VIDEO_HEIGHT
     });
     this.camera.start();
+
+    this.bindControls.apply(this);
   }
 
   /* recall facemesh onResults function with the updated callback function
@@ -34,6 +37,11 @@ class FM {
   changeFilter(filterName) {
     this.filterName = filterName;
     this.faceMesh.onResults(this.drawFaces.bind(this));
+  }
+
+  bindControls(){
+    Controls.toggleVideo();
+    Controls.clickAnimation(this)
   }
 
   /* callback for facemesh onResults function to operate on the resulting
