@@ -1,10 +1,11 @@
 .btn {
   background-color: $purple;
-  color: white;
+  color: $pink;
   padding: 8px;
   font-size: 16px;
   border: none;
-  box-shadow: 0 0 5px purple, 0 0 10px purple;
+  box-shadow: 0 0 5px purple;
+  border: 1px solid $blue;
   width: 145px;
   text-align: center;
 }
@@ -24,16 +25,32 @@
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: $orange;
-  background-color: gray;
   padding: 12px 16px;
+  font-size: 12px;
   text-decoration: none;
+  background-color: $purple;
+  border: 1px solid $blue;
   display: block;
+  color: white;
+  font-style: normal;
+}
+
+.link-container a:hover{
+  text-shadow:
+  0 0 10px $orange,
+  0 0 12px $orange;
+}
+
+.btn:hover {
+  box-shadow:
+  0 0 6px $light-blue,
+  0 0 8px $light-blue;
+  text-shadow:  0 0 2px $blue;;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: gray;
 }
 
 /* Show the dropdown menu on hover */

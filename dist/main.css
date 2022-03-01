@@ -89,6 +89,10 @@ nav {
   align-items: center;
 }
 
+.btn-container {
+  margin-bottom: 10px;
+}
+
 .link-container {
   display: flex;
   align-items: center;
@@ -166,7 +170,7 @@ header {
   text-shadow: 0 0 6px #556DC8, 0 0 8px #E68E36;
 }
 
-.title-container, a {
+.title-container, .link-container a {
   color: #E68E36;
 }
 
@@ -191,11 +195,6 @@ body {
   font-style: italic;
 }
 
-.filter-controls {
-  text-shadow: 0 0 6px #556DC8, 0 0 8px #E68E36;
-  color: #E68E36;
-}
-
 h1 {
   font-size: 40px;
   margin: 0;
@@ -203,11 +202,12 @@ h1 {
 
 .btn {
   background-color: #461E52;
-  color: white;
+  color: #DD517F;
   padding: 8px;
   font-size: 16px;
   border: none;
-  box-shadow: 0 0 5px purple, 0 0 10px purple;
+  box-shadow: 0 0 5px purple;
+  border: 1px solid #556DC8;
   width: 145px;
   text-align: center;
 }
@@ -227,16 +227,28 @@ h1 {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: #E68E36;
-  background-color: gray;
   padding: 12px 16px;
+  font-size: 12px;
   text-decoration: none;
+  background-color: #461E52;
+  border: 1px solid #556DC8;
   display: block;
+  color: white;
+  font-style: normal;
+}
+
+.link-container a:hover {
+  text-shadow: 0 0 10px #E68E36, 0 0 12px #E68E36;
+}
+
+.btn:hover {
+  box-shadow: 0 0 6px #7998EE, 0 0 8px #7998EE;
+  text-shadow: 0 0 2px #556DC8;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: gray;
 }
 
 /* Show the dropdown menu on hover */
