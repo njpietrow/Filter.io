@@ -24,7 +24,7 @@ const Controls = {
     console.log("capturing");
   },
 
-  clickAnimation: function(){
+  clickAnimation: function(faceMesh){
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(btn => {
       btn.addEventListener('mousedown', (e) => {
@@ -34,8 +34,6 @@ const Controls = {
         button.style.color = "pink";
         button.style.transform = "scale(.97)";
       });
-    });
-    buttons.forEach(btn => {
       btn.addEventListener('mouseup', (e) => {
         let button = e.target;
         button.style.boxShadow = "";
@@ -48,12 +46,24 @@ const Controls = {
     const filterOptions = document.querySelectorAll('.filter-select');
     filterOptions.forEach(opt => {
       opt.addEventListener('mousedown', (e) => {
-        let filter = e.target;
-        let fName = filter.getAttribute("value");
-        console.log(fName);
+        let filterOption = e.target;
+        let filterName = filterOption.getAttribute("value");
+        if (filterName === "flappy") {
+          console.log("you chose flappy");
+        } else {
+          faceMesh.changeFilter(filterName);
+        }
+        filterOption.style.border = "1px solid pink";
+        filterOption.style.transform = "scale(.97)";
+      });
+      opt.addEventListener('mouseup', (e) => {
+        let filterOption = e.target;
+        filterOption.style.border = "1px solid #556DC8";
+        filterOption.style.transform = "scale(1)";
       });
     });
   }
+  
 }
 
 export default Controls;
