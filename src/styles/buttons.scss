@@ -19,7 +19,7 @@
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -37,9 +37,6 @@
 }
 
 .link-container a:hover{
-  /* text-shadow:
-  0 0 10px $orange,
-  0 0 12px $orange; */
   text-shadow:  0 0 6px orange, 0 0 12px $pink;
   -webkit-transform: scale(1.1);
 }
@@ -68,6 +65,7 @@ h1:hover {
   box-shadow:
   0 0 6px $light-blue,
   0 0 8px $light-blue;
+  // text-shadow: 0 0 2px $pink;
   // color: gray;
   // -webkit-transform: scale(1.05)
 }

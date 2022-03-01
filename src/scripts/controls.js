@@ -57,8 +57,9 @@ const Controls = {
         } else {
           faceMesh.changeFilter(filterName);
         }
-        filterOption.style.boxShadow = "inset 0px 0px 5px gray";
+        filterOption.style.boxShadow = "0px 0px 8px purple, 0px 0px 30px purple, inset 0px 0px 5px gray";
         filterOption.style.color = "pink";
+        filterOption.style.textShadow = "0 0 2px pink"
         filterOption.style.border = "1px solid pink";
         filterOption.style.transform = "scale(.97)";
       });
