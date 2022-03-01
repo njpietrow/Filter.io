@@ -25,21 +25,17 @@ const DrawingUtils = {
   },
 
   drawClownNose: function(canvasCtx, landmarks){
-    // console.log(landmarks);
     let canvas = canvasCtx.canvas;
     let xpos = landmarks[1].x*canvas.width;
     let ypos = landmarks[1].y*canvas.height;
     var img = new Image;
-    img.src = "assets/Clown_nose_large.png";
-    const dim = 90; //90 is the hardcoded height of the image.
-    canvasCtx.drawImage(img,
-                        xpos-dim/2, 
-                        ypos-dim/2,dim,dim)
+    img.src = "assets/nose.png";
+    const dim = 120; //90 is the hardcoded height of the image.
+    canvasCtx.drawImage(img, xpos-dim/2, ypos-dim/2,dim,dim)
   },
 
   drawFilter: function(canvasCtx,landmarks, type){
     let mutations = this.calculateSkew(canvasCtx, landmarks);
-    // console.log(mutations);
 
     let canvas = canvasCtx.canvas;
     let xpos = landmarks[1].x*canvas.width;
@@ -55,16 +51,9 @@ const DrawingUtils = {
     canvasCtx.restore(); 
   },
   
-  drawPoints: function(canvasCtx, landmarks){
-    for (const [idx,dot] of Object.entries(landmarks)){  
-      let canvas = canvasCtx.canvas
-      let xpos = dot.x * canvas.width;
-      let ypos = dot.y * canvas.height;
-      canvasCtx.beginPath()
-      canvasCtx.arc(xpos, ypos, 1, 0, 2 * Math.PI,true);
-      canvasCtx.fillStyle = 'white';
-      canvasCtx.fill();
-    }
+  drawMask: function(canvasCtx, landmarks){
+    drawConnectors(canvasCtx, landmarks, FACEMESH_TESSELATION,
+      {color: 'black', lineWidth: 1});
   },
   
   calculateSkew: function(canvasCtx, landmarks){
