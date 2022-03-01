@@ -20,9 +20,10 @@ nav {
 .filter-controls {
   max-width: 1000px;
   min-width: 800px;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .link-container {
@@ -97,7 +98,6 @@ a {
   font-size: 20px;
 }
 
-a + a {
+.link-container a + a {
   margin-left: 10px;
 }
-

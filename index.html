@@ -37,18 +37,17 @@
         <canvas id="game-canvas" width="640" height="480"></canvas>
         <!-- <div class="grid"></div> -->
         <div class="filter-controls">
-          <div class="filter-select-container"> 
-            <label for="filter-select">Select a filter</label>
-            <select id="filter-select">
-              <option name="filter[type]" disabled selected >Select a Filter</option>
-              <option name="filter[type]" value="hat">Hat</option>
-              <option name="filter[type]" value="glasses">glasses</option>
-              <option name="filter[type]" value="batman">batman</option>
-            </select>
+          <div class="dropdown">
+            <button class="btn">Select a Filter</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
           </div>
           <div class="camera-controls">
-            <button class="capture">Take a picture</button>
-            <button class="webcam-toggle" data-on="true">Webcam Off</button>
+            <button class="capture btn">Take a picture</button>
+            <button class="webcam-toggle btn" data-on="true">Webcam Off</button>
           </div>
         </div>
       </section>
