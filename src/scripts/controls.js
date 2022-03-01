@@ -1,7 +1,10 @@
 import VideoTools from './video_tools';
 
 const Controls = {
-  toggleVideo: function(canvasCtx, videoElement){
+  toggleVideo: function(){
+    const videoElement = document.querySelector("#video");
+    const canvasElement = document.querySelector("#game-canvas");
+    const canvasCtx = canvasElement.getContext('2d');
     const webcamToggle = document.querySelector('.webcam-toggle');
     let canvas = canvasCtx.canvas;
     webcamToggle.addEventListener('click', (e) => {
@@ -18,6 +21,10 @@ const Controls = {
         VideoTools.startVideo(videoElement);
       }
     });
+  },
+
+  bindOnCanPlay: function(){
+
   },
 
   disableButtons: function(){

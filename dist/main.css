@@ -93,10 +93,8 @@ nav {
   margin-right: auto;
   display: flex;
   justify-content: space-between;
-}
-
-.btn-container {
-  margin-bottom: 1.2em;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 .link-container {
@@ -228,6 +226,7 @@ h1 {
   border: 1px solid #556DC8;
   display: block;
   color: white;
+  text-shadow: none;
 }
 
 .link-container a:hover {
@@ -255,6 +254,7 @@ h1:hover {
 .dropdown-content a:hover {
   background-color: #556DC8;
   box-shadow: 0 0 6px #7998EE, 0 0 8px #7998EE;
+  text-shadow: 0 0 4px #DD517F;
 }
 
 /* Show the dropdown menu on hover */

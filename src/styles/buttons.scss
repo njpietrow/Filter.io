@@ -33,6 +33,7 @@
   border: 1px solid $blue;
   display: block;
   color: white;
+  text-shadow: none;
   // font-style: normal;
 }
 
@@ -65,9 +66,8 @@ h1:hover {
   box-shadow:
   0 0 6px $light-blue,
   0 0 8px $light-blue;
-  // text-shadow: 0 0 2px $pink;
+  text-shadow: 0 0 4px $pink;
   // color: gray;
-  // -webkit-transform: scale(1.05)
 }
 
 
