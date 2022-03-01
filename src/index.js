@@ -1,7 +1,5 @@
 import VideoTools from './scripts/video_tools';
-import {VIDEO_WIDTH,VIDEO_HEIGHT} from './scripts/video_dimensions'
 import FM from './scripts/fm_wrapper'
-//Add a script for the filter class
 
 window.addEventListener('DOMContentLoaded', async () => {
   const videoElement = document.querySelector("#video");

@@ -1,4 +1,4 @@
-import { DEFAULT_SKEW } from "./video_dimensions";
+import { VIDEO_HEIGHT, VIDEO_WIDTH, DEFAULT_SKEW } from "./video_dimensions";
 
 const DrawingUtils = {
 
@@ -42,12 +42,12 @@ const DrawingUtils = {
     let ypos = landmarks[1].y*canvas.height;
     var img = new Image;
     img.src = `assets/mask.png`;
-    const dim = canvas.width*mutations.scale*2.4;
+    const dim = canvas.width*mutations.scale*2.2;
     // console.log(mutations.scale)
     canvasCtx.save(); 
     canvasCtx.translate(xpos, ypos);
-    canvasCtx.rotate(mutations.roll);
-    canvasCtx.drawImage(img, -(dim/2), -(dim/2)+15,dim,dim);
+    canvasCtx.rotate(mutations.roll*.9);
+    canvasCtx.drawImage(img, -(dim/2), -(dim/2)+17,dim,dim);
     canvasCtx.restore(); 
   },
   
@@ -56,8 +56,8 @@ const DrawingUtils = {
       {color: 'night', lineWidth: 1});
   },
 
-  none: function(){
-    
+  none: function(){ 
+    //empty callback for FM onResults 
   },
   
   calculateSkew: function(canvasCtx, landmarks){
@@ -65,6 +65,9 @@ const DrawingUtils = {
     //use 0 for middle, 359 for top right, and 130 for top left.
     const leftEyeCorner = landmarks[130];
     const rightEyeCorner = landmarks[359];
+    // const leftEyeCorner = landmarks[119];
+    // const rightEyeCorner = landmarks[348];
+
     const upperLip = landmarks[164];
     
     //midpoint between eye landmarks
@@ -77,7 +80,7 @@ const DrawingUtils = {
                         y: eyeMidPoint.y,
                         z: upperLip.z};
     
-    //calculate angle between eye connector and x-axis
+    //calculate angle in radians between eye connector and x-axis
     const roll = Math.atan2(
       (rightEyeCorner.y - leftEyeCorner.y),
       (rightEyeCorner.x - leftEyeCorner.x)
@@ -97,22 +100,21 @@ const DrawingUtils = {
 
     const scale = this.distance(rightEyeCorner,leftEyeCorner); 
 
-/*     //draw key landmarks
-    this.drawPoints(canvasCtx,
-      {leftEyeCorner, rightEyeCorner, upperLip, eyeMidPoint, originPoint});
-      
     //draw lines beteen key points.
-    drawConnectors(canvasCtx,
+  /*   drawConnectors(canvasCtx,
       {0: leftEyeCorner, 1: rightEyeCorner, 2: upperLip, 3: eyeMidPoint, 4: originPoint},
       [[0,1],[2,3],[2,4]],
       {color: 'red', lineWidth: 1}) */
     
-    //return roll and pitch angles in radians 
     return {roll: roll, scale: scale}
   },
 
   distance: function(pos1, pos2){
-    return Math.sqrt((pos1.x - pos2.x) ** 2 + (pos1.y - pos2.y) ** 2 + (pos1.z - pos2.z) ** 2)
+    // get ratio of video element since x and y coordinates are given assuming square element
+    let ratio = VIDEO_WIDTH/VIDEO_HEIGHT;
+
+    return Math.sqrt((pos1.x - pos2.x) ** 2 * ratio + (pos1.y - pos2.y) ** 2 / ratio + (pos1.z - pos2.z) ** 2)
+    
   }
 
 }
