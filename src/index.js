@@ -28,9 +28,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   const fm = new FM("mask");
 
-
-  // fm.replaceFilter("covidMask");
-
   Controls.toggleVideo(canvasCtx, videoElement);
   Controls.clickAnimation(fm)
 

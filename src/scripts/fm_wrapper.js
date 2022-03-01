@@ -17,7 +17,7 @@ class FM {
       minDetectionConfidence: 0.5,
       minTrackingConfidence: 0.5
     });
-    this.faceMesh.onResults(this.drawFaces.bind(this));
+    // this.faceMesh.onResults(this.drawFaces.bind(this));
   
     this.camera = new Camera(this.videoElement, {
       onFrame: async () => {
@@ -31,7 +31,7 @@ class FM {
 
   /* recall facemesh onResults function with the updated callback function
   to draw the new filter on the canvas */
-  replaceFilter(filterName) {
+  changeFilter(filterName) {
     this.filterName = filterName;
     this.faceMesh.onResults(this.drawFaces.bind(this));
   }

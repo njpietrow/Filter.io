@@ -24,7 +24,7 @@ const DrawingUtils = {
     canvasCtx.restore(); 
   },
 
-  clownNose: function(canvasCtx, landmarks){
+  nose: function(canvasCtx, landmarks){
     let canvas = canvasCtx.canvas;
     let xpos = landmarks[1].x*canvas.width;
     let ypos = landmarks[1].y*canvas.height;
@@ -34,7 +34,7 @@ const DrawingUtils = {
     canvasCtx.drawImage(img, xpos-dim/2, ypos-dim/2,dim,dim)
   },
 
-  covidMask: function(canvasCtx,landmarks, type){
+  mask: function(canvasCtx,landmarks, type){
     let mutations = this.calculateSkew(canvasCtx, landmarks);
 
     let canvas = canvasCtx.canvas;
@@ -51,7 +51,7 @@ const DrawingUtils = {
     canvasCtx.restore(); 
   },
   
-  mask: function(canvasCtx, landmarks){
+  tessalate: function(canvasCtx, landmarks){
     drawConnectors(canvasCtx, landmarks, FACEMESH_TESSELATION,
       {color: 'night', lineWidth: 1});
     drawRectangle(canvasCtx, {landmarks})
