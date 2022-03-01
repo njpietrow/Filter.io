@@ -52,7 +52,7 @@ const Controls = {
         button.style.color = "#7998EE";
         button.style.transform = "scale(1)";
       });
-    });
+    }); 
 
     const filterOptions = document.querySelectorAll('.filter-select');
     filterOptions.forEach(opt => {

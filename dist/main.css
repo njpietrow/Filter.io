@@ -204,6 +204,10 @@ h1 {
   font-style: italic;
 }
 
+.filter-select {
+  display: block;
+}
+
 .dropdown {
   position: relative;
 }
@@ -218,7 +222,7 @@ h1 {
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content .filter-select {
   padding: 12px 7px;
   font-size: 12px;
   text-decoration: none;
@@ -229,12 +233,12 @@ h1 {
   text-shadow: none;
 }
 
-.link-container a:hover, .link-container a:focus {
+.link-container a:hover {
   text-shadow: 0 0 6px orange, 0 0 12px #DD517F;
   -webkit-transform: scale(1.1);
 }
 
-.link-container a:active {
+.link-container .a:active {
   -webkit-transform: scale(0.95);
 }
 
@@ -245,24 +249,28 @@ h1:hover {
   /* Standard */
 }
 
-.btn:hover, .btn:focus {
+.btn:hover {
   box-shadow: 0 0 6px #7998EE, 0 0 8px #7998EE;
   text-shadow: 0 0 2px #556DC8;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover, .dropdown-content a:focus {
+.dropdown-content .filter-select:hover {
   background-color: #556DC8;
   box-shadow: 0 0 6px #7998EE, 0 0 8px #7998EE;
   text-shadow: 0 0 4px #DD517F;
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content {
+.dropdown:hover .dropdown-content {
   display: block;
 }
 
+.dropdown:hover .filter-select {
+  width: 90%;
+}
+
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn, .dropdown:focus .dropbtn {
+.dropdown:hover .dropbtn {
   background-color: #E68E36;
 }
