@@ -20,6 +20,10 @@ const Controls = {
     });
   },
 
+  disableButtons: function(){
+
+  },
+
   captureImage: function(webcamToggle, canvasCtx, videoElement){
     console.log("capturing");
   },
@@ -29,7 +33,7 @@ const Controls = {
     buttons.forEach(btn => {
       btn.addEventListener('mousedown', (e) => {
         let button = e.target;
-        button.style.boxShadow = "0px 0px 10px purple, 0px 0px 50px purple, inset 0px 0px 5px #c1c1c1";
+        button.style.boxShadow = "0px 0px 10px purple, 0px 0px 50px purple, inset 0px 0px 5px gray";
         button.style.border = "1px solid pink";
         button.style.color = "pink";
         button.style.transform = "scale(.97)";
@@ -53,11 +57,15 @@ const Controls = {
         } else {
           faceMesh.changeFilter(filterName);
         }
+        filterOption.style.boxShadow = "inset 0px 0px 5px gray";
+        filterOption.style.color = "pink";
         filterOption.style.border = "1px solid pink";
         filterOption.style.transform = "scale(.97)";
       });
       opt.addEventListener('mouseup', (e) => {
         let filterOption = e.target;
+        filterOption.style.boxShadow = "";
+        filterOption.style.color = "white";
         filterOption.style.border = "1px solid #556DC8";
         filterOption.style.transform = "scale(1)";
       });

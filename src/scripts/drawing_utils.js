@@ -54,7 +54,10 @@ const DrawingUtils = {
   tessalate: function(canvasCtx, landmarks){
     drawConnectors(canvasCtx, landmarks, FACEMESH_TESSELATION,
       {color: 'night', lineWidth: 1});
-    drawRectangle(canvasCtx, {landmarks})
+  },
+
+  none: function(){
+    
   },
   
   calculateSkew: function(canvasCtx, landmarks){

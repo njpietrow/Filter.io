@@ -197,6 +197,7 @@ h1 {
   border: 1px solid #556DC8;
   width: 145px;
   text-align: center;
+  font-style: italic;
 }
 
 .dropdown {
@@ -221,7 +222,6 @@ h1 {
   border: 1px solid #556DC8;
   display: block;
   color: white;
-  font-style: normal;
 }
 
 .link-container a:hover {
@@ -246,14 +246,12 @@ h1:hover {
 .btn:hover {
   box-shadow: 0 0 6px #7998EE, 0 0 8px #7998EE;
   text-shadow: 0 0 2px #556DC8;
-  -webkit-transform: scale(1.05);
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #556DC8;
   box-shadow: 0 0 6px #7998EE, 0 0 8px #7998EE;
-  -webkit-transform: scale(1.05);
 }
 
 /* Show the dropdown menu on hover */

@@ -8,6 +8,7 @@
   border: 1px solid $blue;
   width: 145px;
   text-align: center;
+  font-style: italic;
 }
 
 .dropdown {
@@ -32,7 +33,7 @@
   border: 1px solid $blue;
   display: block;
   color: white;
-  font-style: normal;
+  // font-style: normal;
 }
 
 .link-container a:hover{
@@ -58,7 +59,7 @@ h1:hover {
   0 0 6px $light-blue,
   0 0 8px $light-blue;
   text-shadow: 0 0 2px $blue;
-  -webkit-transform: scale(1.05)
+  // -webkit-transform: scale(1.05)
 }
 
 /* Change color of dropdown links on hover */
@@ -68,8 +69,9 @@ h1:hover {
   0 0 6px $light-blue,
   0 0 8px $light-blue;
   // color: gray;
-  -webkit-transform: scale(1.05)
+  // -webkit-transform: scale(1.05)
 }
+
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
