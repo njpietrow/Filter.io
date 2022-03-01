@@ -9,13 +9,12 @@ const Controls = {
       if(button.hasAttribute("data-on")){
         button.toggleAttribute("data-on");
         button.innerHTML = "Webcam On ";
-        //add feature to disable button until video has stopped.
         VideoTools.stopVideo();
         canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+        //disable all other camera control buttons.
       } else {
         button.toggleAttribute("data-on");
         button.innerHTML = "Webcam Off";
-        //add feature to disable button until video has started again.
         VideoTools.startVideo(videoElement);
       }
     });
@@ -45,10 +44,13 @@ const Controls = {
         button.style.transform = "scale(1)";
       });
     });
+
     const filterOptions = document.querySelectorAll('.filter-select');
     filterOptions.forEach(opt => {
       opt.addEventListener('mousedown', (e) => {
-        let filter = e.targetl
+        let filter = e.target;
+        let fName = filter.getAttribute("value");
+        console.log(fName);
       });
     });
   }
