@@ -1,14 +1,15 @@
 .btn {
   background-color: $purple;
-  color: $light-blue;
+  color: rgba(121, 152, 238, 1);
   padding: 8px;
   font-size: 16px;
   border: none;
-  box-shadow: 0 0 5px $light-blue;
+  box-shadow: 0 0 6px $light-blue;
   border: 1px solid $blue;
   width: 145px;
   text-align: center;
   font-style: italic;
+  transition-duration: 50ms;
 }
 
 .filter-select {
@@ -47,7 +48,7 @@
   -webkit-transform: scale(1.1);
 }
 
-.link-container .a:active{
+.link-container a:active{
   -webkit-transform: scale(.95);
 }
 
@@ -68,7 +69,7 @@ h1:hover {
 .btn:active {
   box-shadow:0px 0px 10px purple, 0px 0px 50px purple, inset 0px 0px 5px gray;
   border: 1px solid pink;
-  color: pink;
+  color: rgba(255, 192, 203, .8);
   -webkit-transform: scale(.97);
 }
 
@@ -80,14 +81,6 @@ h1:hover {
   0 0 8px $light-blue;
   text-shadow: 0 0 4px $pink;
   // color: gray;
-}
-
-.filter-select:active {
-  box-shadow: 0px 0px 8px purple, 0px 0px 30px purple, inset 0px 0px 5px gray;
-  color: pink;
-  text-shadow: 0 0 2px pink;
-  border: 1px solid pink;
-  -webkit-transform: scale(.97);
 }
 
 /* Show the dropdown menu on hover */

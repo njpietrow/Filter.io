@@ -36,7 +36,7 @@ const VideoTools = {
     }, 1000);
 
     //slight delay to show camera flash. and wait for above loop to finish
-    return new Promise(resolve => setTimeout(resolve, 4000)); 
+    return new Promise(resolve => setTimeout(resolve, 4020)); 
   },
 
   capture: async function() {
