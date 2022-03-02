@@ -32,7 +32,7 @@
 
 /* Links inside the dropdown */
 .dropdown-content .filter-select {
-  padding: 12px 7px;
+  padding: 8px 7px;
   font-size: 12px;
   text-decoration: none;
   background-color: $purple;
@@ -64,6 +64,14 @@ h1:hover {
   0 0 8px $light-blue;
   text-shadow: 0 0 2px $blue;
   // -webkit-transform: scale(1.05)
+}
+
+.btn:disabled, .filter-select:disabled {
+  color: #C0C0C070;
+  box-shadow: none;
+  text-shadow: none;
+  border: 1px solid #C0C0C070;
+  cursor: not-allowed;
 }
 
 .btn:active {

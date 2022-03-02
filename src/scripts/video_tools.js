@@ -49,8 +49,10 @@ const VideoTools = {
   },
   
   captureImage: async function(){
+    //disable the capture button on page.
     await this.countdown();
     await this.capture();
+    //enable the capture button on page.
 
     // wait for the countdown animation function to finish.
 

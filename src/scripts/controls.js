@@ -1,8 +1,6 @@
 import VideoTools from './video_tools';
 import CameraEffects from './camera_effects';
 
-
-
 const Controls = {
   toggleVideo: function(){
     const canvasElement = document.querySelector("#game-canvas");
@@ -14,15 +12,12 @@ const Controls = {
     
       if(button.hasAttribute("data-on")){
         button.toggleAttribute("data-on");
-        // button.style.color = "rgba(121, 152, 238, .8)";
         VideoTools.stopVideo();
         canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
         //disable all other camera control buttons.
-        console.log("disabling in listneer");
         Controls.disableButtons();
       } else {
         button.toggleAttribute("data-on");
-        // button.style.color = "";
         VideoTools.startVideo();
         //enable all other camera control buttons
         Controls.enableButtons();
@@ -46,31 +41,17 @@ const Controls = {
 
   disableButtons: function(){
     //loop through all OTHER buttons, enable them
-    console.log("disabling")
     const offable = document.querySelectorAll('.off-able');
-    console.log(offable);
     offable.forEach(button => {
       button.toggleAttribute("disabled");
-      button.style.color = "#C0C0C070";
-      button.style.boxShadow = "none";
-      button.style.textShadow = "none";
-      button.style.border = "1px solid #C0C0C070";
-      button.style.cursor = "not-allowed";
     });
   },
 
   enableButtons: function(){
     //loop through all OTHER buttons, enable them
-    console.log("enabling")
     const offable = document.querySelectorAll('.off-able');
-    console.log(offable);
     offable.forEach(button => {
       button.toggleAttribute("disabled");
-      button.style.color = "";
-      button.style.boxShadow = "";
-      button.style.textShadow = "";
-      button.style.border = "";
-      button.style.cursor = "";
     });
   },
 
@@ -87,14 +68,12 @@ const Controls = {
       opt.addEventListener('mousedown', (e) => {
         let filterOption = e.target;
         let filterName = filterOption.getAttribute("value");
-        if (filterName === "flappy") console.log("you chose flappy"); 
-        else faceMesh.changeFilter(filterName);
+        faceMesh.changeFilter(filterName);
       });
       opt.addEventListener('keypress', (e) => {
         let filterOption = e.target;
         let filterName = filterOption.getAttribute("value");
-        if (filterName === "flappy") console.log("you chose flappy"); 
-        else faceMesh.changeFilter(filterName);
+        faceMesh.changeFilter(filterName);
       });
     });
   }

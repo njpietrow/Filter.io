@@ -226,7 +226,7 @@ footer {
 
 /* Links inside the dropdown */
 .dropdown-content .filter-select {
-  padding: 12px 7px;
+  padding: 8px 7px;
   font-size: 12px;
   text-decoration: none;
   background-color: #461E52;
@@ -255,6 +255,14 @@ h1:hover {
 .btn:hover, .btn:focus-visible {
   box-shadow: 0 0 6px #7998EE, 0 0 8px #7998EE;
   text-shadow: 0 0 2px #556DC8;
+}
+
+.btn:disabled, .filter-select:disabled {
+  color: #C0C0C070;
+  box-shadow: none;
+  text-shadow: none;
+  border: 1px solid #C0C0C070;
+  cursor: not-allowed;
 }
 
 .btn:active {
