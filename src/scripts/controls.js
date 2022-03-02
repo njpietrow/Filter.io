@@ -11,37 +11,7 @@ const Controls = {
     let canvas = canvasCtx.canvas;
     webcamToggle.addEventListener('click', (e) => {
       let button = e.target
-      
-      let disableButtons = function(){
-        //loop through all OTHER buttons, gray them out and disable them
-        console.log("disabling")
-        const offable = document.querySelectorAll('.off-able');
-        console.log(offable);
-        offable.forEach(button => {
-          button.toggleAttribute("disabled");
-          button.style.color = "#C0C0C070";
-          button.style.boxShadow = "none";
-          button.style.textShadow = "none";
-          button.style.border = "1px solid #C0C0C070";
-          button.style.cursor = "not-allowed";
-        });
-      }
-
-      let enableButtons = function(){
-        //loop through all OTHER buttons, gray them out and disable them
-        console.log("enabling")
-        const offable = document.querySelectorAll('.off-able');
-        console.log(offable);
-        offable.forEach(button => {
-          button.toggleAttribute("disabled");
-          button.style.color = "";
-          button.style.boxShadow = "";
-          button.style.textShadow = "";
-          button.style.border = "";
-          button.style.cursor = "";
-        });
-      }
-
+    
       if(button.hasAttribute("data-on")){
         button.toggleAttribute("data-on");
         // button.style.color = "rgba(121, 152, 238, .8)";
@@ -49,45 +19,16 @@ const Controls = {
         canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
         //disable all other camera control buttons.
         console.log("disabling in listneer");
-        disableButtons();
+        Controls.disableButtons();
       } else {
         button.toggleAttribute("data-on");
         // button.style.color = "";
         VideoTools.startVideo();
         //enable all other camera control buttons
-        enableButtons();
+        Controls.enableButtons();
       }
     });
   },
-
-  // disableButtons: function(){
-  //   //loop through all OTHER buttons, gray them out and disable them
-  //   console.log("disabling")
-  //   const offable = document.querySelectorAll('.off-able');
-  //   console.log(offable);
-  //   offable.forEach(button => {
-  //     button.toggleAttribute("disabled");
-  //     button.style.color = "#C0C0C070";
-  //     button.style.boxShadow = "none";
-  //     button.style.textShadow = "none";
-  //     button.style.border = "1px solid #C0C0C070";
-  //   });
-
-  // },
-
-  // enableButtons: function(){
-  //   //loop through all OTHER buttons, gray them out and disable them
-  //   console.log("enabling")
-  //   const offable = document.querySelectorAll('.off-able');
-  //   console.log(offable);
-  //   offable.forEach(button => {
-  //     button.toggleAttribute("disabled");
-  //     button.style.color = "";
-  //     button.style.boxShadow = "";
-  //     button.style.textShadow = "";
-  //     button.style.border = "";
-  //   });
-  // },
 
   bindOnCanPlay: function(){
     const videoElement = document.querySelector("#video");
@@ -104,7 +45,33 @@ const Controls = {
   },
 
   disableButtons: function(){
-    
+    //loop through all OTHER buttons, enable them
+    console.log("disabling")
+    const offable = document.querySelectorAll('.off-able');
+    console.log(offable);
+    offable.forEach(button => {
+      button.toggleAttribute("disabled");
+      button.style.color = "#C0C0C070";
+      button.style.boxShadow = "none";
+      button.style.textShadow = "none";
+      button.style.border = "1px solid #C0C0C070";
+      button.style.cursor = "not-allowed";
+    });
+  },
+
+  enableButtons: function(){
+    //loop through all OTHER buttons, enable them
+    console.log("enabling")
+    const offable = document.querySelectorAll('.off-able');
+    console.log(offable);
+    offable.forEach(button => {
+      button.toggleAttribute("disabled");
+      button.style.color = "";
+      button.style.boxShadow = "";
+      button.style.textShadow = "";
+      button.style.border = "";
+      button.style.cursor = "";
+    });
   },
 
   bindTakePicture: function(){

@@ -265,10 +265,17 @@ h1:hover {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content .filter-select:hover, .dropdown-content .filter-select:focus-visible {
+.dropdown-content .filter-select:hover:enabled, .dropdown-content .filter-select:focus-visible:enabled {
   background-color: #556DC8;
   box-shadow: 0 0 6px #7998EE, 0 0 8px #7998EE;
   text-shadow: 0 0 4px #DD517F;
+}
+
+.flappy:disabled {
+  cursor: not-allowed;
+  color: #C0C0C070;
+  background-color: gray;
+  border: 1px solid #C0C0C070;
 }
 
 /* Show the dropdown menu on hover */

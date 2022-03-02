@@ -56,10 +56,12 @@ const DrawingUtils = {
   tessalate: function(canvasCtx, landmarks){
     drawConnectors(canvasCtx, landmarks, FACEMESH_TESSELATION,
       {color: '#C0C0C070', lineWidth: 1});
-    drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_EYE, {color: 'blue'});
+    drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_EYE, {color: 'yellow'});
     // drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_IRIS, {color: 'white'});
+    drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_EYEBROW, {color: '#FF3030'});
     drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_EYE, {color: 'blue'});
     // drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_IRIS, {color: 'white'});
+    drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_EYEBROW, {color: '#30FF30'});
     drawConnectors(canvasCtx, landmarks, FACEMESH_LIPS, 
       {color: 'red'});
 
