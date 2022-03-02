@@ -43,6 +43,7 @@ class FM {
     Controls.toggleVideo();
     Controls.bindFilterSelect(this);
     Controls.bindOnCanPlay();
+    Controls.bindTakePicture();
   }
 
   /* callback for facemesh onResults function to operate on the resulting

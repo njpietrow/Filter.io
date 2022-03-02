@@ -32,9 +32,19 @@ const VideoTools = {
     const videoElement = document.querySelector('#video')
     videoElement.srcObject.getTracks()[0].stop()
   },
+
+  captureAnimation: function() {
+
+  },
   
-  captureImage: function(canvasCtx, videoElement){
-    console.log("capturing");
+  captureImage: function(){
+    this.captureAnimation();
+    const canvas = document.querySelector("#game-canvas");
+    const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
+    const a = document.createElement('a');
+    a.setAttribute('download', 'filterio_capture.png');
+    a.setAttribute('href', image);
+    a.click();
   },
 
 }

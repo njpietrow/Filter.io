@@ -41,7 +41,10 @@ const Controls = {
   },
 
   bindTakePicture: function(){
-
+    const captureButton = document.querySelector('.capture');
+    captureButton.addEventListener('click', (e) => {
+      VideoTools.captureImage();
+    });
   },
 
   bindFilterSelect: function(faceMesh){
