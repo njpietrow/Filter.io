@@ -38,7 +38,7 @@ const Controls = {
   },
 
   disableButtons: function(){
-
+    
   },
 
   bindTakePicture: function(){

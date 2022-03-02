@@ -1,5 +1,4 @@
 import {VIDEO_WIDTH,VIDEO_HEIGHT} from './video_dimensions'
-import DrawingUtils from './drawing_utils';
 import CameraEffects from './camera_effects';
 
 const VideoTools = {
@@ -30,7 +29,6 @@ const VideoTools = {
     let timer = setInterval(function() {
       if (i <= 0) {
         clearInterval(timer);
-
       } else {
         CameraEffects.countdownAnimation(i); //draw the current countdown on the canvas
       }

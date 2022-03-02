@@ -128,6 +128,17 @@ a {
   margin-left: 10px;
 }
 
+footer {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 11px;
+  display: flex;
+  justify-content: end;
+}
+
+.copyright {
+  margin-right: 10px;
+}
+
 .content {
   background-color: rgba(128, 128, 128, 0.392);
 }
@@ -172,6 +183,10 @@ body {
 h1 {
   font-size: 40px;
   margin: 0;
+}
+
+footer {
+  color: orange;
 }
 
 .btn {

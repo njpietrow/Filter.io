@@ -97,3 +97,14 @@ a {
   margin-left: 10px;
 }
 
+footer {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  // font-style: normal;
+  font-size: 11px;
+  display: flex;
+  justify-content: end;
+}
+
+.copyright {
+  margin-right: 10px;
+}
