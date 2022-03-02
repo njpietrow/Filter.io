@@ -84,7 +84,6 @@ nav {
 
 .filter-container {
   display: block;
-  max-width: 900px;
   flex-grow: 1;
 }
 
@@ -95,6 +94,8 @@ nav {
   justify-content: space-between;
   padding-top: 20px;
   margin-bottom: 20px;
+  width: 90%;
+  max-width: 900px;
 }
 
 .link-container {
@@ -135,11 +136,12 @@ section {
   justify-content: center;
   align-items: flex-end;
   height: 580px;
-  width: 90%;
+  width: 100%;
 }
 
 nav {
-  padding: 15px;
+  padding-top: 20px;
+  padding-bottom: 15px;
 }
 
 a {
@@ -158,6 +160,11 @@ header {
   background: linear-gradient(#0D0221 0%, #45125e 40%, #A22561 80%, #FF3864 100%);
   box-shadow: 0 0 50px purple, 0 0 100px purple;
   text-shadow: 0 0 6px #556DC8, 0 0 8px #E68E36;
+  border-bottom: 1px solid #E68E36;
+}
+
+.filter-container {
+  border-bottom: 1px solid #E68E36;
 }
 
 .title-container, .link-container a {

@@ -21,7 +21,6 @@ nav {
 
 .filter-container {
   display: block;
-  max-width: 900px;
   flex-grow: 1;
 }
 
@@ -33,6 +32,8 @@ nav {
   justify-content: space-between;
   padding-top: 20px;
   margin-bottom: 20px;
+  width: 90%;
+  max-width: 900px;
 }
 
 .link-container {
@@ -44,7 +45,6 @@ nav {
 .video-background { 
   height: 480px;
   width: 640px;
-  // border: 5px solid black;
   z-index: -1;
 }
 
@@ -55,8 +55,6 @@ canvas, .video-background {
   position: absolute;
   top: 50%;
   left: 50%;
-  // width: 80%;
-  // height: 80%;
   transform: translate(-50%, -55%);
 }
 
@@ -67,9 +65,6 @@ video {
   position: absolute;
   transform: scaleX(-1);
   top: 4.5%;
-  // -webkit-transform: scaleX(-1);
-  // transform: translate(-0%, -50%);
-  // transform: translate(-50%, -50%);
 }
 
 canvas {
@@ -78,16 +73,16 @@ canvas {
 
 section {
   position: relative; 
-  // width: 90%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   height: 580px;
-  width: 90%;
+  width: 100%;
 }
 
 nav{
-  padding: 15px;
+  padding-top: 20px;
+  padding-bottom: 15px;
 }
 
 a {
