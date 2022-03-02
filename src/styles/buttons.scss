@@ -1,12 +1,12 @@
 .btn {
   background-color: $purple;
   color: rgba(121, 152, 238, 1);
-  padding: 8px;
-  font-size: 16px;
+  padding: 0.8vh;
+  font-size: min(1.3vh, 16px);
   border: none;
   box-shadow: 0 0 6px $light-blue;
   border: 1px solid $blue;
-  width: 145px;
+  width: min(16vh, 145px);
   text-align: center;
   font-style: italic;
   transition-duration: 50ms;
@@ -32,8 +32,8 @@
 
 /* Links inside the dropdown */
 .filter-select {
-  padding: 8px 8px;
-  font-size: 12px;
+  padding: 0.8vh;
+  font-size: min(1.2vh, 12px);
   text-decoration: none;
   background-color: $purple;
   border: 1px solid $blue;

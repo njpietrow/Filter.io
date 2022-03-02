@@ -51,40 +51,38 @@ nav {
 
 // make this video background dynamic
 .video-background { 
-  height: 480px;
-  width: 640px;
+  // height: 480px;
+  // width: 640px;
+  aspect-ratio: 4 / 3; 
   z-index: -1;
 }
 
 .control-background {
-  height: 480px;
-  width: 640px;
+  aspect-ratio: 4 / 3; 
   z-index: 6;
   display: block;
-  margin: 0 0;
   position: absolute;
   top: 50%;
   left: 50%;
+  width: auto;
+  height: 50vh;
   transform: translate(-50%, -52.5%);
 }
 
 
 #game-canvas, #effect-canvas, .video-background {
   display: block;
-  margin: 0 auto;
+  margin: auto;
   position: absolute;
+  width: auto;
+  height: 50vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 video {
-  // height: 100vw;
-  display: block;
-  margin: 0 auto;
-  position: absolute;
-  transform: scaleX(-1);
-  top: 4.5%;
+  display: none;
 }
 
 #game-canvas {
@@ -100,7 +98,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 600px;
+  height: 60vh;
   width: 100%;
 }
 
