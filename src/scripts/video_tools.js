@@ -49,12 +49,18 @@ const VideoTools = {
   },
   
   captureImage: async function(){
-    //disable the capture button on page.
-    await this.countdown();
-    await this.capture();
-    //enable the capture button on page.
+    //disable capture button
+    const captureButton = document.querySelector('.capture');
+    captureButton.toggleAttribute("disabled");
+    captureButton.innerHTML = "Ready ..."
 
     // wait for the countdown animation function to finish.
+    await this.countdown();
+    await this.capture();
+
+    //enable capture button
+    captureButton.toggleAttribute("disabled");
+    captureButton.innerHTML = "Take Picture";
 
     const canvas = document.querySelector("#game-canvas");
     const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
@@ -62,7 +68,7 @@ const VideoTools = {
     a.setAttribute('download', 'filterio_capture.png');
     a.setAttribute('href', image);
     a.click();
-  },
+  }
 
 }
 
