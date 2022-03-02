@@ -12,6 +12,8 @@ const DrawingUtils = {
     canvasCtx.scale(-1, 1);
     //clear the canvasCtx using the height and width of the canvas
     canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+    const vid = document.querySelector("#video");
+    canvasCtx.drawImage(vid, 0, 0);
     //if there are any faces detected
     if (detections.multiFaceLandmarks !== undefined) { 
       //interate over each face
@@ -114,7 +116,6 @@ const DrawingUtils = {
     let ratio = VIDEO_WIDTH/VIDEO_HEIGHT;
 
     return Math.sqrt((pos1.x - pos2.x) ** 2 * ratio + (pos1.y - pos2.y) ** 2 / ratio + (pos1.z - pos2.z) ** 2)
-    
   }
 
 }

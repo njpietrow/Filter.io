@@ -64,6 +64,13 @@ h1:hover {
   // -webkit-transform: scale(1.05)
 }
 
+.btn:active {
+  box-shadow:0px 0px 10px purple, 0px 0px 50px purple, inset 0px 0px 5px gray;
+  border: 1px solid pink;
+  color: pink;
+  -webkit-transform: scale(.97);
+}
+
 /* Change color of dropdown links on hover */
 .dropdown-content .filter-select:hover {
   background-color: $blue;
@@ -72,6 +79,14 @@ h1:hover {
   0 0 8px $light-blue;
   text-shadow: 0 0 4px $pink;
   // color: gray;
+}
+
+.filter-select:active {
+  box-shadow: 0px 0px 8px purple, 0px 0px 30px purple, inset 0px 0px 5px gray;
+  color: pink;
+  text-shadow: 0 0 2px pink;
+  border: 1px solid pink;
+  -webkit-transform: scale(.97);
 }
 
 /* Show the dropdown menu on hover */

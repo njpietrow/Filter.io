@@ -2,7 +2,8 @@ import {VIDEO_WIDTH,VIDEO_HEIGHT} from './video_dimensions'
 
 const VideoTools = {
 
-  startVideo: function (videoElement) {
+  startVideo: function () {
+    const videoElement = document.querySelector("#video");
     navigator.getUserMedia(
       { video: { width: VIDEO_WIDTH, height: VIDEO_HEIGHT } },
       function(mediaStream) { 
@@ -20,20 +21,21 @@ const VideoTools = {
   fadeIn: function(videoElement) {
     let op = 0;
     let timer = setInterval(function() {
-        if (op >= 1) clearInterval(timer);
+        if (op > 1) clearInterval(timer);
         videoElement.style.opacity = op;
         op ||= 0.1;
         op += op * 0.1;
-    }, 30);
+    }, 20);
   },
 
   stopVideo: function(){
     const videoElement = document.querySelector('#video')
     videoElement.srcObject.getTracks()[0].stop()
-    // for (const track of videoElement.srcObject.getTracks()) {
-    //   track.stop();
-    // }
-  }
+  },
+  
+  captureImage: function(canvasCtx, videoElement){
+    console.log("capturing");
+  },
 
 }
 

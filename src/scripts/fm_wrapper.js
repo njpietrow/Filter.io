@@ -7,7 +7,7 @@ class FM {
     this.videoElement = document.querySelector("#video");
     this.canvasElement = document.querySelector("#game-canvas");
     this.canvasCtx = this.canvasElement.getContext('2d');
-    this.filterName = filterName;
+    this.filterName = filterName || "none";
 
     this.faceMesh = new FaceMesh({locateFile: (file) => {
       return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`;
@@ -18,7 +18,7 @@ class FM {
       minDetectionConfidence: 0.5,
       minTrackingConfidence: 0.5
     });
-    // this.faceMesh.onResults(this.drawFaces.bind(this));
+    this.faceMesh.onResults(this.drawFaces.bind(this));
   
     this.camera = new Camera(this.videoElement, {
       onFrame: async () => {
@@ -41,7 +41,8 @@ class FM {
 
   bindControls(){
     Controls.toggleVideo();
-    Controls.clickAnimation(this)
+    Controls.clickAnimation(this);
+    Controls.bindOnCanPlay();
   }
 
   /* callback for facemesh onResults function to operate on the resulting
