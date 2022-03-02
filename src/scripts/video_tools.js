@@ -36,11 +36,15 @@ const VideoTools = {
   captureAnimation: function() {
 
   },
+
+  loadingAnimation: function() {
+    
+  },
   
   captureImage: function(){
     this.captureAnimation();
     const canvas = document.querySelector("#game-canvas");
-    const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
+    const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
     const a = document.createElement('a');
     a.setAttribute('download', 'filterio_capture.png');
     a.setAttribute('href', image);

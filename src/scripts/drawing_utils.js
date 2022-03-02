@@ -36,7 +36,7 @@ const DrawingUtils = {
     canvasCtx.drawImage(img, xpos-dim/2, ypos-dim/2,dim,dim)
   },
 
-  mask: function(canvasCtx,landmarks, type){
+  mask: function(canvasCtx,landmarks){
     let mutations = this.calculateSkew(canvasCtx, landmarks);
 
     let canvas = canvasCtx.canvas;
