@@ -1,5 +1,3 @@
-/* PHASE 1: Reset */
-
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
@@ -18,40 +16,12 @@ span, article, footer, time, small {
   background: none;
 }
 
-ol, ul {
-  list-style: none;
-}
-
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-input[type="password"],
-input[type="email"],
-input[type="text"],
-input[type="submit"],
-textarea,
 button {
-  /*
-  Get rid of native styling. Read more here:
-  http://css-tricks.com/almanac/properties/a/appearance/
-  */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-button,
-input[type="submit"] {
+button {
   cursor: pointer;
-}
-
-/* Clearfix */
-
-.group:after {
-  content: "";
-  clear: both;
-  display: table;
 }

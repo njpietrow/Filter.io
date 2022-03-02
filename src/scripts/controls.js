@@ -1,4 +1,5 @@
-  import VideoTools from './video_tools';
+import VideoTools from './video_tools';
+import CameraEffects from './camera_effects';
 
 const Controls = {
   toggleVideo: function(){
@@ -31,8 +32,8 @@ const Controls = {
       // set opacity of visible elements to 0 to fade them in.
       videoElement.style.opacity = 0; 
       canvasElement.style.opacity = 0;
-      VideoTools.fadeIn(videoElement); //video is playing in the background behind the canvas.
-      VideoTools.fadeIn(canvasElement)
+      CameraEffects.fadeIn(videoElement); //video is playing in the background behind the canvas.
+      CameraEffects.fadeIn(canvasElement)
     };
   },
 

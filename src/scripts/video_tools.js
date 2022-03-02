@@ -1,4 +1,6 @@
 import {VIDEO_WIDTH,VIDEO_HEIGHT} from './video_dimensions'
+import DrawingUtils from './drawing_utils';
+import CameraEffects from './camera_effects';
 
 const VideoTools = {
 
@@ -18,31 +20,42 @@ const VideoTools = {
     )
   },
 
-  fadeIn: function(videoElement) {
-    let op = 0;
-    let timer = setInterval(function() {
-        if (op > 1) clearInterval(timer);
-        videoElement.style.opacity = op;
-        op ||= 0.1;
-        op += op * 0.1;
-    }, 20);
-  },
-
   stopVideo: function(){
     const videoElement = document.querySelector('#video')
     videoElement.srcObject.getTracks()[0].stop()
   },
 
-  captureAnimation: function() {
+  countdown: async function() {
+    let i=3;
+    let timer = setInterval(function() {
+      if (i <= 0) {
+        clearInterval(timer);
 
+      } else {
+        CameraEffects.countdownAnimation(i); //draw the current countdown on the canvas
+      }
+      i--;
+    }, 1000);
+
+    //slight delay to show camera flash. and wait for above loop to finish
+    return new Promise(resolve => setTimeout(resolve, 4000)); 
+  },
+
+  capture: async function() {
+    CameraEffects.captureAnimation();
+    return new Promise(resolve => setTimeout(resolve, 0));
   },
 
   loadingAnimation: function() {
     
   },
   
-  captureImage: function(){
-    this.captureAnimation();
+  captureImage: async function(){
+    await this.countdown();
+    await this.capture();
+
+    // wait for the countdown animation function to finish.
+
     const canvas = document.querySelector("#game-canvas");
     const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
     const a = document.createElement('a');

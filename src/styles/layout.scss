@@ -49,7 +49,7 @@ nav {
 }
 
 
-canvas, .video-background {
+#game-canvas, #effect-canvas, .video-background {
   display: block;
   margin: 0 auto;
   position: absolute;
@@ -67,8 +67,12 @@ video {
   top: 4.5%;
 }
 
-canvas {
+#game-canvas {
   z-index: 1;
+}
+
+#effect-canvas {
+  z-index: 5;
 }
 
 section {

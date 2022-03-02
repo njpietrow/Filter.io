@@ -37,7 +37,7 @@ const DrawingUtils = {
   },
 
   mask: function(canvasCtx,landmarks){
-    let mutations = this.calculateSkew(canvasCtx, landmarks);
+    let mutations = this.calculateSkew(landmarks);
 
     let canvas = canvasCtx.canvas;
     let xpos = landmarks[1].x*canvas.width;
@@ -55,14 +55,22 @@ const DrawingUtils = {
   
   tessalate: function(canvasCtx, landmarks){
     drawConnectors(canvasCtx, landmarks, FACEMESH_TESSELATION,
-      {color: 'night', lineWidth: 1});
+      {color: '#C0C0C070', lineWidth: 1});
+    drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_EYE, {color: 'blue'});
+    // drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_IRIS, {color: 'white'});
+    drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_EYE, {color: 'blue'});
+    // drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_IRIS, {color: 'white'});
+    drawConnectors(canvasCtx, landmarks, FACEMESH_LIPS, 
+      {color: 'red'});
+
+    // this.nose(canvasCtx, landmarks)
   },
 
   none: function(){ 
     //empty callback for FM onResults 
   },
   
-  calculateSkew: function(canvasCtx, landmarks){
+  calculateSkew: function(landmarks){
     
     //use 0 for middle, 359 for top right, and 130 for top left.
     const leftEyeCorner = landmarks[130];
