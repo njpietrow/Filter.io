@@ -7,7 +7,7 @@ const Controls = {
     const canvasCtx = canvasElement.getContext('2d');
     const webcamToggle = document.querySelector('.webcam-toggle');
     let canvas = canvasCtx.canvas;
-    webcamToggle.addEventListener('click', (e) => {
+    webcamToggle.addEventListener('click', async (e) => {
       let button = e.target
     
       if(button.hasAttribute("data-on")){
@@ -16,13 +16,28 @@ const Controls = {
         canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
         //disable all other camera control buttons.
         Controls.disableButtons();
+
+        //set timeout for button
+        button.toggleAttribute("disabled")
+        await this.timer(800);
+        button.toggleAttribute("disabled")
+
       } else {
         button.toggleAttribute("data-on");
         VideoTools.startVideo();
         //enable all other camera control buttons
         Controls.enableButtons();
+
+        //set timeout for button
+        button.toggleAttribute("disabled")
+        await this.timer(800);
+        button.toggleAttribute("disabled")
       }
     });
+  },
+
+  timer: async function(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
   },
 
   bindOnCanPlay: function(){

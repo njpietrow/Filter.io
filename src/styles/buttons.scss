@@ -31,8 +31,8 @@
 }
 
 /* Links inside the dropdown */
-.dropdown-content .filter-select {
-  padding: 8px 7px;
+.filter-select {
+  padding: 8px 8px;
   font-size: 12px;
   text-decoration: none;
   background-color: $purple;
@@ -43,6 +43,13 @@
   // font-style: normal;
 }
 
+.filter-select:active {
+  box-shadow: 0px 0px 8px purple, 0px 0px 30px purple, inset 0px 0px 5px gray;
+  color: pink;
+  text-shadow: 0 0 2px pink;
+  border: 1px solid pink;
+  -webkit-transform: scale(.97);
+}
 .link-container a:hover, .link-container a:focus-visible{
   text-shadow:  0 0 6px orange, 0 0 12px $pink;
   -webkit-transform: scale(1.1);
@@ -63,7 +70,7 @@ h1:hover {
   0 0 6px $light-blue,
   0 0 8px $light-blue;
   text-shadow: 0 0 2px $blue;
-  // -webkit-transform: scale(1.05)
+  -webkit-transform: scale(1.01)
 }
 
 .btn:disabled, .filter-select:disabled {
@@ -73,6 +80,7 @@ h1:hover {
   border: 1px solid #C0C0C070;
   cursor: not-allowed;
 }
+
 
 .btn:active {
   box-shadow:0px 0px 10px purple, 0px 0px 50px purple, inset 0px 0px 5px gray;
@@ -98,13 +106,10 @@ h1:hover {
   border: 1px solid #C0C0C070;
 }
 
+
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content {
   display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: $orange;
-}
  

@@ -6,6 +6,8 @@ $light-blue: #7998EE;
 
 .content {
   background-color: rgba(128, 128, 128, 0.392);
+  border-bottom: 1px solid $purple;
+  box-shadow: 0 8px 4px -4px $purple;
 }
 
 header {
@@ -21,7 +23,7 @@ header {
 .filter-container {
   // background: linear-gradient(  rgba(238, 156, 4) 0%,  #A22561 40% , #45125e 60%, #0d022192 100%);
   // box-shadow: 0 0 50px purple, 0 -100px 100px purple;
-  border-bottom: 1px solid $purple;
+  // border-bottom: 1px solid $purple;
   // box-shadow: 0 8px 4px -4px $purple;
 }
 
