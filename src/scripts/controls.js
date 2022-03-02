@@ -44,28 +44,16 @@ const Controls = {
 
   },
 
-  clickAnimation: function(faceMesh){
-    const buttons = document.querySelectorAll('.btn');
-    // buttons.forEach(btn => {
-    //   btn.addEventListener('mousedown', (e) => {
-    //     let button = e.target;
-    //     button.style.boxShadow = "0px 0px 10px purple, 0px 0px 50px purple, inset 0px 0px 5px gray";
-    //     button.style.border = "1px solid pink";
-    //     button.style.color = "pink";
-    //     button.style.transform = "scale(.97)";
-    //   });
-    //   btn.addEventListener('mouseup', (e) => {
-    //     let button = e.target;
-    //     button.style.boxShadow = "";
-    //     button.style.border = "1px solid #7998EE";
-    //     button.style.color = "#7998EE";
-    //     button.style.transform = "scale(1)";
-    //   });
-    // }); 
-
+  bindFilterSelect: function(faceMesh){
     const filterOptions = document.querySelectorAll('.filter-select');
     filterOptions.forEach(opt => {
       opt.addEventListener('mousedown', (e) => {
+        let filterOption = e.target;
+        let filterName = filterOption.getAttribute("value");
+        if (filterName === "flappy") console.log("you chose flappy"); 
+        else faceMesh.changeFilter(filterName);
+      });
+      opt.addEventListener('keypress', (e) => {
         let filterOption = e.target;
         let filterName = filterOption.getAttribute("value");
         if (filterName === "flappy") console.log("you chose flappy"); 

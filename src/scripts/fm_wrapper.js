@@ -41,7 +41,7 @@ class FM {
 
   bindControls(){
     Controls.toggleVideo();
-    Controls.clickAnimation(this);
+    Controls.bindFilterSelect(this);
     Controls.bindOnCanPlay();
   }
 
