@@ -129,27 +129,27 @@ const DrawingUtils = {
     //use 0 for middle, 359 for top right, and 130 for top left.
     const leftEyeCorner = landmarks[130];
     const rightEyeCorner = landmarks[359];
-    // const leftEyeCorner = landmarks[119];
-    // const rightEyeCorner = landmarks[348];
-
     const upperLip = landmarks[164];
     
     //midpoint between eye landmarks
-    const eyeMidPoint = {x: (rightEyeCorner.x + leftEyeCorner.x)/2,
-                         y: (rightEyeCorner.y + leftEyeCorner.y)/2,
-                         z: (rightEyeCorner.z + leftEyeCorner.z)/2};
-
-    //get frame of reference to display slopes
-    const originPoint = {x: upperLip.x,
-                        y: eyeMidPoint.y,
-                        z: upperLip.z};
-    
+    const eyeMidPoint = {
+      x: (rightEyeCorner.x + leftEyeCorner.x)/2,
+      y: (rightEyeCorner.y + leftEyeCorner.y)/2,
+      z: (rightEyeCorner.z + leftEyeCorner.z)/2
+    };
+         
     //calculate angle in radians between eye connector and x-axis
     const roll = Math.atan2(
       (rightEyeCorner.y - leftEyeCorner.y),
       (rightEyeCorner.x - leftEyeCorner.x)
     );
-
+                           
+    //get frame of reference to display slopes
+    const originPoint = {
+      x: upperLip.x,
+      y: eyeMidPoint.y,
+      z: upperLip.z
+    };
     //calculate angle between face slope and y-axis
     const pitch = Math.atan2(
       (eyeMidPoint.z - upperLip.z),
@@ -175,9 +175,13 @@ const DrawingUtils = {
 
   distance: function(pos1, pos2){
     // get ratio of video element since x and y coordinates are given assuming square element
-    let ratio = VIDEO_WIDTH/VIDEO_HEIGHT;
+    let aspectRatio = VIDEO_WIDTH/VIDEO_HEIGHT;
 
-    return Math.sqrt((pos1.x - pos2.x) ** 2 * ratio + (pos1.y - pos2.y) ** 2 / ratio + (pos1.z - pos2.z) ** 2)
+    return Math.sqrt(
+      (pos1.x - pos2.x) ** 2 * aspectRatio + 
+      (pos1.y - pos2.y) ** 2 / aspectRatio +
+      (pos1.z - pos2.z) ** 2
+    );
   }
 
 }
