@@ -34,7 +34,7 @@ In addition, the project will include:
 ## Contributors
 <table>
   <tr>
-    <td align="center"><a href="https://RomelPerez.dev"><img src="https://avatars.githubusercontent.com/u/25106777?s=400&u=8952a11bc2abc791633bc27f941ed601499c1294&v=4" width="140px;" alt=""/><br /><sub><b>Nick Pietrow</b></sub></a>
+    <td align="center"><a href="https://github.com/njpietrow"><img src="https://avatars.githubusercontent.com/u/25106777?s=400&u=8952a11bc2abc791633bc27f941ed601499c1294&v=4" width="140px;" alt=""/><br /><sub><b>Nick Pietrow</b></sub></a>
     </td>
   </tr>
 </table>
