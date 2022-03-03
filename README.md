@@ -1,7 +1,17 @@
 
-<a href="https://njpietrow.github.io/Filter.io/"><h1>Filterio</h1></a>
+<a href="https://njpietrow.github.io/Filter.io/"> <img src="https://raw.githubusercontent.com/njpietrow/Filter.io/main/assets/favicon.ico"> <h1>Filterio</h1></a>
 <br>
-Filterio uses facial recognition to overlay images and filters onto a video feed from a webcam. By tracking specific facial features like eyes and a nose, Filterio can accurately map images onto the video stream of a face. When you find a filter you like, snap a picture with the capture button to share the photo with your friends!
+Filterio uses facial recognition to overlay images and filters onto a video feed from a webcam. By tracking specific facial features like eyes and a nose, Filterio can map images onto a face. When you find a filter you like, snap a picture with the capture button to share the photo with your friends! 
+<br>
+<a href="https://njpietrow.github.io/Filter.io/">demo</a>
+
+## Technologies Used
+This project will be implemented with the following technologies:
+
+* The Canvas API to render the face filters as pngs
+* Webpack and Babel to bundle and transpile the source JavaScript code
+* npm to manage project dependencies
+* Media Pipe face mesh library to bring computer vision algorithms to the browser for facial recognition and facial landmark mapping
 
 ## Functionality & MVPs
 With this application, users will be able to:
@@ -17,23 +27,7 @@ In addition, the project will include:
 * An introductory instruction popup
 * A descriptive readme and licenses/credits
 
-## Wireframes
-<img src="https://github.com/njpietrow/Filter.io/blob/main/assets/Screen%20Shot%202022-02-24%20at%204.35.53%20PM.png"> 
-
-## Technologies, Libraries, APIs
-This project will be implemented with the following technologies:
-
-* The Canvas API to render the face filters as pngs
-* Webpack and Babel to bundle and transpile the source JavaScript code
-* npm to manage project dependencies
-* Media Pipe face mesh library to bring computer vision algorithms to the browser for facial recognition and facial landmark mapping
-
-## Implementation Timeline
-* **Thursday** - research the tracking js libary and learn how to use/import
-* **Friday** - Setup project, including getting webpack up and running. Design structure of page
-* **Saturday/Sunday** - Display Live camera feed and display face recognition and landmarks
-* **Monday** - Create face filters to map to user face
-* **Tuesday** - Warp/skew filters based on face angle. Tune refresh rate
-* **Wednesday** - Allow users to select filters and revamp page UI. 
-* **Thursday Morning** - Deploy to GitHub pages. If time, rewrite this proposal as a production README.
-
+## Upcoming Features
+* option for camera shutter sound effect
+* flappy bird mini game controlled by position of nose
+* mobile device responsiveness
