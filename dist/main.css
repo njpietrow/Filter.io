@@ -34,7 +34,7 @@ button {
 }
 
 .app {
-  transition: 0.5s;
+  transition-duration: 1s;
 }
 
 .app.blur {
@@ -67,10 +67,7 @@ nav {
   margin-right: 2%;
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
-  margin-bottom: 20px;
   width: 97%;
-  max-width: 900px;
 }
 
 .link-container {
@@ -79,38 +76,28 @@ nav {
 }
 
 .video-background {
-  height: 480px;
-  width: 640px;
+  aspect-ratio: 4/3;
   z-index: -1;
 }
 
 .control-background {
-  height: 480px;
-  width: 640px;
   z-index: 6;
-  display: block;
-  margin: 0 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -52.5%);
 }
 
-#game-canvas, #effect-canvas, .video-background {
+#game-canvas, #effect-canvas, .video-background, .control-background {
+  aspect-ratio: 4/3;
   display: block;
-  margin: 0 auto;
+  margin: auto;
   position: absolute;
+  width: auto;
+  height: 60vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 video {
-  display: block;
-  margin: 0 auto;
-  position: absolute;
-  transform: scaleX(-1);
-  top: 4.5%;
+  display: none;
 }
 
 #game-canvas {
@@ -126,7 +113,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 600px;
+  height: 70vh;
   width: 100%;
 }
 
@@ -208,12 +195,13 @@ footer {
 .btn {
   background-color: #461E52;
   color: #7998ee;
-  padding: 8px;
-  font-size: 16px;
+  padding: 0.8vh;
+  font-size: min(1.8vh, 16px);
   border: none;
-  box-shadow: 0 0 6px #7998EE;
+  box-shadow: 0 0 12px #7998EE, 0 0 6px whitesmoke;
   border: 1px solid #556DC8;
-  width: 145px;
+  margin-top: 1vh;
+  width: min(17vh, 145px);
   text-align: center;
   font-style: italic;
   transition-duration: 50ms;
@@ -239,8 +227,8 @@ footer {
 
 /* Links inside the dropdown */
 .filter-select {
-  padding: 8px 8px;
-  font-size: 12px;
+  padding: 0.8vh;
+  font-size: min(1.2vh, 12px);
   text-decoration: none;
   background-color: #461E52;
   border: 1px solid #556DC8;
