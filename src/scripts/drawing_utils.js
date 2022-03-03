@@ -3,6 +3,7 @@ import { VIDEO_HEIGHT, VIDEO_WIDTH, DEFAULT_SKEW } from "./video_dimensions";
 const DrawingUtils = {
 
   draw: function(canvasCtx, detections, functionName, filterName){
+    console.log(filterName)
     //save the context of 2d plane before transforming it to draw
     canvasCtx.save(); 
     //get the canvas element out of the context
@@ -52,6 +53,58 @@ const DrawingUtils = {
     canvasCtx.drawImage(img, -(dim/2), -(dim/2)+17,dim,dim);
     canvasCtx.restore(); 
   },
+
+  ears: function(canvasCtx,landmarks){
+    let mutations = this.calculateSkew(landmarks);
+
+    let canvas = canvasCtx.canvas;
+    let xpos = landmarks[1].x*canvas.width;
+    let ypos = landmarks[1].y*canvas.height;
+    var img = new Image;
+    img.src = `assets/ears.png`;
+    const dim = canvas.width*mutations.scale*1.4;
+    // console.log(mutations.scale)
+    canvasCtx.save(); 
+    canvasCtx.translate(xpos, ypos);
+    canvasCtx.rotate(mutations.roll*.9);
+    canvasCtx.drawImage(img, -(dim/2), -(dim/2)-50,dim,(dim/2.55));
+    canvasCtx.restore(); 
+  },
+
+  flowers: function(canvasCtx,landmarks){
+    let mutations = this.calculateSkew(landmarks);
+
+    let canvas = canvasCtx.canvas;
+    let xpos = landmarks[1].x*canvas.width;
+    let ypos = landmarks[1].y*canvas.height;
+    var img = new Image;
+    img.src = `assets/flowers.png`;
+    const dim = canvas.width*mutations.scale*1.7;
+    // console.log(mutations.scale)
+    canvasCtx.save(); 
+    canvasCtx.translate(xpos, ypos);
+    canvasCtx.rotate(mutations.roll*.9);
+    canvasCtx.drawImage(img, -(dim/2), -(dim/2)-60,dim,(dim/1.81));
+    canvasCtx.restore(); 
+  },
+
+  mustache: function(canvasCtx,landmarks){
+    let mutations = this.calculateSkew(landmarks);
+
+    let canvas = canvasCtx.canvas;
+    let xpos = landmarks[1].x*canvas.width;
+    let ypos = landmarks[1].y*canvas.height;
+    var img = new Image;
+    img.src = `assets/mustache.png`;
+    const dim = canvas.width*mutations.scale*1.2;
+    // console.log(mutations.scale)
+    canvasCtx.save(); 
+    canvasCtx.translate(xpos, ypos);
+    canvasCtx.rotate(mutations.roll*.9);
+    canvasCtx.drawImage(img, -(dim/2), -(dim/2)+15,dim,(dim));
+    canvasCtx.restore(); 
+  },
+  
   
   tessalate: function(canvasCtx, landmarks){
     drawConnectors(canvasCtx, landmarks, FACEMESH_TESSELATION,
