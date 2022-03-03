@@ -63,7 +63,7 @@ distance: function(pos1, pos2){
 
 ## Credit
 * Shoutout to <a href="https://kongmunist.medium.com/">Andy Kong</a> and <a href="https://www.youtube.com/channel/UCACzb9JwH0ppt9Xwcpz9Bmw">Kazuki Umeda</a> for the helpful guides on understanding how the Face Mesh Library works
-* Special thanks to Kyle at <a href="https://twitter.com/DevSimplified?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Web Dev Simplified Umeda</a> for the project inspiration
+* Special thanks to Kyle at <a href="https://twitter.com/DevSimplified?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Web Dev Simplified</a> for the project inspiration
 
 
 ## Contributors
