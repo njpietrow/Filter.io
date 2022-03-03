@@ -30,7 +30,7 @@ Additional features
 ## Filter Processing
 To apply a filter on top of a face we need to know where the face is on the screen and how it is oriented. The Face Mesh library gives us access to coordinates of 468 facial landmarks so we can use those 3D coordinates to draw our filters. Here's a glimpse of what the landmarks look like.
 
-<img src="https://github.com/njpietrow/Filter.io/blob/main/assets/landmarks.png"  height="400" width="360" alt="">
+<img src="https://github.com/njpietrow/Filter.io/blob/main/assets/landmarks.png"  height="500" width="460" alt="">
 
 The approriate filter rotation is calculated using a landmarks for the eyes. Once we have the coordinates, we can calculate the appropriate amount of rotation to apply to the face filter when drawing it on the canvas. Using the atan2 function, we can get a continous output even if we go below 0 radians, which is a limitation of the original arctangent function.
 ```javaScript
