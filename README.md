@@ -16,9 +16,9 @@ Filter.io was built using the following technologies:
 * Sass to bring variables to stylesheets
 
 ## Functionality
-* View a live stream video feed from their webcam
+* View a live stream video feed from webcam
 * Explore filter options from a dropdown menu
-* Interact with responsive filters that react to movement
+* Interact with responsive filters that react to changes in position
 * Snap photobooth pictures using the capture button
 * Toggle the webcam on and off
 
