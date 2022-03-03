@@ -25,7 +25,7 @@ nav {
   margin-left: auto;
   margin-right: auto;
   width: 90%;
-  max-width: 900px;
+  max-width: 1700px;
 }
 
 .filter-controls {
@@ -93,14 +93,18 @@ h1 {
 }
 
 footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:12px;   /* Height of the footer */
+  // background:#6cf;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  // font-style: normal;
   font-size: 11px;
   display: flex;
   justify-content: end;
-  max-width: 930px;
   margin: auto;
 }
+
 
 .copyright {
   margin-right: 1%;
@@ -116,7 +120,6 @@ footer {
   margin-right: 0;
   margin-top: 15vh;
   margin-bottom: 0;
-  scale: (originalsize / vw100);
 
   transition: all 1s ease;
 }
@@ -147,3 +150,4 @@ footer {
   
   font-style: normal;
 }
+
