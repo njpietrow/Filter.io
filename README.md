@@ -1,5 +1,6 @@
 
-<a href="https://njpietrow.github.io/Filter.io/"> <img src="https://raw.githubusercontent.com/njpietrow/Filter.io/main/assets/favicon.ico"> <h1>Filterio</h1></a>
+<img src="https://raw.githubusercontent.com/njpietrow/Filter.io/main/assets/favicon.ico" style="display: inline;"> 
+<a href="https://njpietrow.github.io/Filter.io/"><h1>Filterio</h1></a>
 <br>
 Filterio uses facial recognition to overlay images and filters onto a video feed from a webcam. By tracking specific facial features like eyes and a nose, Filterio can map images onto a face. When you find a filter you like, snap a picture with the capture button to share the photo with your friends! 
 <br>
