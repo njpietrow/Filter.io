@@ -16,25 +16,23 @@ Filter.io was built using the following technologies:
 * Sass to bring variables to stylesheets
 
 ## Functionality
-With this application, users will be able to:
-* View a live video feed on the webpage sourced to their webcam
-* View video filters that have been mapped onto their face in the video feed
-* See filters respond to movement as their face rotates, tilts, and translates across the screen
-* Select from multiple options of video filters
-* Take pictures using the webcam, photbooth style.
-* Start and stop the live video feed
+* View a live stream video feed from their webcam
+* Explore filter options from a dropdown menu
+* Interact with responsive filters that react to movement
+* Snap photobooth pictures using the capture button
+* Toggle the webcam on and off
 
-In addition, the project will include:
-* Links to the creator's personal pages
+Additional features
 * An introductory instruction popup
-* A descriptive readme and licenses/credits
+* Licenses and credits
+* Links to personal websites
 
-### Filter Processing
-To apply a filter on top of a face we need to know where the face is on the screen and how it is oriented. The Face Mesh library gives us access to coordinates of 468 facial landmarks so we can use those 3D coordinates to draw our filters.
+## Filter Processing
+To apply a filter on top of a face we need to know where the face is on the screen and how it is oriented. The Face Mesh library gives us access to coordinates of 468 facial landmarks so we can use those 3D coordinates to draw our filters. Here's a glimpse of what the landmarks look like.
 
-<img src="https://github.com/njpietrow/Filter.io/blob/readme/assets/landmarks.png"  height="100" width="80" alt="">
+<img src="https://github.com/njpietrow/Filter.io/blob/readme/assets/landmarks.png"  height="300" width="240" alt="">
 
-The approriate filter rotation is calculated using select facial landmarks from the Face Mesh tracking output. Once we have the coordinates, we can calculate the appropriate amount of rotation to apply to the face filter when drawing it on the canvas. Using the atan2 function, we can get a continous output even if we go below 0 radians, which is a limitation of the original arctangent function.
+The approriate filter rotation is calculated using a landmarks for the eyes. Once we have the coordinates, we can calculate the appropriate amount of rotation to apply to the face filter when drawing it on the canvas. Using the atan2 function, we can get a continous output even if we go below 0 radians, which is a limitation of the original arctangent function.
 ```javaScript
 //select landmarks from Face Mesh output landmarks array
 const leftEyeCorner = landmarks[130];
@@ -46,7 +44,7 @@ const roll = Math.atan2(
   (rightEyeCorner.x - leftEyeCorner.x)
 );
 ```
-Similarly, we also want to know the proper scale of the filer since the perceived size of a face will change depending on the distance from the webcam. We can scale our filters by assuming that the distance between the users eyes will remain consistent. This calculation gets the distance between 2 points in a 3D space and also accounts for the aspect ratio scaling for the x and y coordinates becuase the landmarks are 1:1 and the video is 4:3.
+Similarly, we also want to know the proper scale of the filter since the perceived size of a face will change depending on the distance from the webcam. We can scale our filters by assuming that the distance between the users eyes will remain consistent. The below calculation gets the distance between 2 points in a 3D space and also accounts for the aspect ratio scaling for the x and y coordinates becuase the landmarks are 1:1 and the video is 4:3.
 ```javaScript
 distance: function(pos1, pos2){
   let aspectRatio = VIDEO_WIDTH/VIDEO_HEIGHT;
@@ -58,13 +56,14 @@ distance: function(pos1, pos2){
 }
 ```
 
-
 ## Upcoming Features
-* option for camera shutter sound effect
-* flappy bird mini game controlled by position of nose
-* mobile device responsiveness
+* Option for camera shutter sound effect
+* Flappy Bird mini game controlled by position of nose
+* Mobile device responsiveness
 
 ## Credit
+* Shoutout to <a href="https://kongmunist.medium.com/">Andy Kong</a> and <a href="https://www.youtube.com/channel/UCACzb9JwH0ppt9Xwcpz9Bmw">Kazuki Umeda</a> for the helpful guides on understanding how the Face Mesh Library works
+* Special thanks to Kyle at <a href="https://twitter.com/DevSimplified?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Web Dev Simplified Umeda</a> for the project inspiration
 
 
 ## Contributors
