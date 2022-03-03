@@ -2,11 +2,12 @@
   background-color: $purple;
   color: rgba(121, 152, 238, 1);
   padding: 0.8vh;
-  font-size: min(1.3vh, 16px);
+  font-size: min(1.8vh, 16px);
   border: none;
-  box-shadow: 0 0 6px $light-blue;
+  box-shadow: 0 0 12px $light-blue, 0 0 6px whitesmoke;
   border: 1px solid $blue;
-  width: min(16vh, 145px);
+  margin-top: 1vh;
+  width: min(17vh, 145px);
   text-align: center;
   font-style: italic;
   transition-duration: 50ms;
@@ -80,7 +81,6 @@ h1:hover {
   border: 1px solid #C0C0C070;
   cursor: not-allowed;
 }
-
 
 .btn:active {
   box-shadow:0px 0px 10px purple, 0px 0px 50px purple, inset 0px 0px 5px gray;

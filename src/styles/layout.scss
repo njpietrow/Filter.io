@@ -1,5 +1,6 @@
 .app {
-  transition: .5s;
+  // transition: 1s;
+  transition-duration: 1s;
 }
 .app.blur {
   filter: blur(10px)
@@ -26,22 +27,12 @@ nav {
   max-width: 900px;
 }
 
-// .filter-container {
-//   display: block;
-//   flex-grow: 1;
-//   z-index: 6;
-// }
-
 .filter-controls {
   margin-left: 2%;
   margin-right: 2%;
-  // max-width: 900px;
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
-  margin-bottom: 20px;
   width: 97%;
-  max-width: 900px;
 }
 
 .link-container {
@@ -58,24 +49,17 @@ nav {
 }
 
 .control-background {
-  aspect-ratio: 4 / 3; 
   z-index: 6;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: 50vh;
-  transform: translate(-50%, -52.5%);
 }
 
 
-#game-canvas, #effect-canvas, .video-background {
+#game-canvas, #effect-canvas, .video-background, .control-background  {
+  aspect-ratio: 4 / 3; 
   display: block;
   margin: auto;
   position: absolute;
   width: auto;
-  height: 50vh;
+  height: 60vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -98,7 +82,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 60vh;
+  height: 70vh;
   width: 100%;
 }
 
