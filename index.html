@@ -15,6 +15,7 @@
   </head>
 
   <body class="app">
+    <div>
     <header>
       <nav class="nav-bar">
         <div class="title-container">
@@ -28,12 +29,20 @@
     </header>
 
     <main class="content">
-      <section>
+
+      <div class="instructions">
+        <h3>Welcome to Filter.io</h3>
+        <p>Hover over the filter dropdown to view filter options. Once you find one you like, test it out and snap a picture to share with your friends!</p>
+        <button class="clear-instructions btn">Done</button>
+      </div>
+
+      <section class="blur">
 
         <div class="video-background">&nbsp;</div>
         <video id="video" autoplay muted></video>
         <canvas id="game-canvas" width="640" height="480"></canvas>
         <canvas id="effect-canvas" width="640" height="480"></canvas>
+     
         <div class="control-background">
           <div class="filter-controls">
             <div class="dropdown btn-container">

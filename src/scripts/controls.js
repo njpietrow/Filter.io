@@ -54,6 +54,21 @@ const Controls = {
     };
   },
 
+  bindClearInstructions: function(){
+    const doneButton = document.querySelector(".clear-instructions");
+    const blur = document.querySelector(".blur");
+    const instructions = document.querySelector(".instructions");
+
+    doneButton.addEventListener('click', (e) => {
+      instructions.style.display = "none";
+      instructions.style.visbility = "hidden";
+      blur.classList.remove("blur");
+
+      //remove blur and unclickable attributes from content
+      //make the instructions be hidden.
+    });
+  },
+
   disableButtons: function(){
     //loop through all OTHER buttons, enable them
     const offable = document.querySelectorAll('.off-able');

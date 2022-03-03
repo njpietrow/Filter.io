@@ -10,7 +10,7 @@ $light-blue: #7998EE;
   box-shadow: 0 8px 4px -4px $purple;
 }
 
-header {
+header{
   background: linear-gradient( #0D0221 0%, #45125e 40%, #A22561 80%, #FF3864 100% );
   box-shadow: 0 0 50px purple, 0 0 100px purple;
   text-shadow:
@@ -20,12 +20,6 @@ header {
   // box-shadow: 0 8px 6px -6px black;
 }
 
-.filter-container {
-  // background: linear-gradient(  rgba(238, 156, 4) 0%,  #A22561 40% , #45125e 60%, #0d022192 100%);
-  // box-shadow: 0 0 50px purple, 0 -100px 100px purple;
-  // border-bottom: 1px solid $purple;
-  // box-shadow: 0 8px 4px -4px $purple;
-}
 
 .title-container, .link-container a {
   // background-color: orange;
@@ -37,14 +31,18 @@ header {
   border: 0px solid black;
   // box-shadow:0 0 5px $orange;
   z-index: 1;
+  box-shadow: 0px -8px 8px rgba(255, 52, 157, 0.447);
+  box-shadow: 0px -6px 4px rgba(255, 181, 52, 0.399);
 }
 
 #video {
   z-index: 2;
+  
 }
 
 #game-canvas {
   z-index: 3;
+  
 }
 
 body {
@@ -63,4 +61,21 @@ h1 {
 
 footer {
   color: orange;
+}
+
+.instructions {
+  background-color: rgb(43, 42, 42);
+  box-shadow: 0 25px 50px $blue, 0 0 100px $blue;
+  // text-shadow:
+  // 0 0 6px #556DC8,
+  // 0 0 8px #E68E36;
+  border: 1px solid $light-blue;
+  color: $light-blue;
+}
+
+.instructions h3 {
+  font-size: 20px;
+  text-shadow:
+  0 0 6px #556DC8
+  // 0 0 8px #E68E36;
 }

@@ -46,6 +46,7 @@ class FM {
     Controls.bindFilterSelect(this);
     Controls.bindOnCanPlay();
     Controls.bindTakePicture();
+    Controls.bindClearInstructions();
   }
 
   /* callback for facemesh onResults function to operate on the resulting
