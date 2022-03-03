@@ -60,6 +60,8 @@ h1 {
 }
 
 footer {
+  border-top: 1px solid $orange;
+  background: linear-gradient( $pink , #45125e , #0D0221 );
   color: orange;
 }
 
