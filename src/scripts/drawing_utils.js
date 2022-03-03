@@ -3,7 +3,6 @@ import { VIDEO_HEIGHT, VIDEO_WIDTH, DEFAULT_SKEW } from "./video_dimensions";
 const DrawingUtils = {
 
   draw: function(canvasCtx, detections, functionName, filterName){
-    console.log(filterName)
     //save the context of 2d plane before transforming it to draw
     canvasCtx.save(); 
     //get the canvas element out of the context
