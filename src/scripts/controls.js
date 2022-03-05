@@ -15,7 +15,7 @@ const Controls = {
         VideoTools.stopVideo();
         canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
         //disable all other camera control buttons.
-        Controls.disableButtons();
+        Controls.toggleButtons();
 
         //set timeout for button
         button.toggleAttribute("disabled")
@@ -26,7 +26,7 @@ const Controls = {
         button.toggleAttribute("data-on");
         VideoTools.startVideo();
         //enable all other camera control buttons
-        Controls.enableButtons();
+        Controls.toggleButtons();
 
         //set timeout for button
         button.toggleAttribute("disabled")
@@ -69,16 +69,8 @@ const Controls = {
     });
   },
 
-  disableButtons: function(){
-    //loop through all OTHER buttons, enable them
-    const offable = document.querySelectorAll('.off-able');
-    offable.forEach(button => {
-      button.toggleAttribute("disabled");
-    });
-  },
-
-  enableButtons: function(){
-    //loop through all OTHER buttons, enable them
+  toggleButtons: function(){
+    //loop through all OTHER buttons, toggle them
     const offable = document.querySelectorAll('.off-able');
     offable.forEach(button => {
       button.toggleAttribute("disabled");

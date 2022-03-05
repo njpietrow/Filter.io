@@ -1,4 +1,5 @@
 import { VIDEO_WIDTH, VIDEO_HEIGHT } from "./video_dimensions";
+import Controls from "./controls";
 
 const CameraEffects = {
 
@@ -12,28 +13,28 @@ const CameraEffects = {
     }, 20);
   },
 
-  countdownAnimation: function(i) {
+  clearCanvas: function(){
     const canvasElement = document.querySelector("#effect-canvas");
     const canvasCtx = canvasElement.getContext('2d');
     canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+    return canvasCtx
+  },
+
+  countdownAnimation: function(i) {
+    const canvasCtx = this.clearCanvas();
     canvasCtx.fillStyle = "white";
     canvasCtx.font = 'bold 66px Arial';
     canvasCtx.fillText(i, VIDEO_WIDTH/2-20, VIDEO_HEIGHT/2+20);
   },
   
   captureAnimation: async function() {
-    let timer = async function(time){
-      return new Promise(resolve => setTimeout(resolve, time));
-    }
-    const canvasElement = document.querySelector("#effect-canvas");
-    const canvasCtx = canvasElement.getContext('2d');
-    canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
-    await timer(20);
+    const canvasCtx = this.clearCanvas();
+    await Controls.timer(20);
     canvasCtx.fillStyle = "rgba(255, 255, 255, .7)";
     canvasCtx.fillRect(0, 0, VIDEO_WIDTH, VIDEO_HEIGHT);
    
-    await timer(100);
-    canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+    await Controls.timer(100);
+    this.clearCanvas();
   }
 
 }
