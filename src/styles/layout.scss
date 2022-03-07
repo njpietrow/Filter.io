@@ -88,6 +88,10 @@ h1 {
   margin-left: 8%;
 }
 
+.content-container {
+  position: relative;
+}
+
 
 .content > * {
   position: absolute;
@@ -97,9 +101,9 @@ h1 {
   bottom: 0;
   margin-left: 0;
   margin-right: 0;
-  margin-top: 15vh;
+  margin-top: 52vh;
   margin-bottom: 0;
-  
+  // transform: translate(0, 100%);
   transition: all 1s ease;
 }
 
@@ -127,9 +131,9 @@ footer {
   background-color: white;
   max-width: 300px;
   height: 200px;
-  top: 50%;
+  // top: 50%;
   left: 50%;
-  transform: translate(-50%, -110%);
+  transform: translate(-50%, -50%);
   filter: none;
   padding: 30px;
   border-radius: 4px;

@@ -29,46 +29,47 @@
       </nav>
     </header>
 
-    <main class="content">
+    <main class="content-container">
+      <div class="content">
+        <div class="instructions">
+          <h3>Welcome to Filter.io</h3>
+          <p>Hover over the filter dropdown to view filter options. Once you find one you like, test it out and snap a picture to share with your friends!</p>
+          <button class="clear-instructions btn">Done</button>
+        </div>
 
-      <div class="instructions">
-        <h3>Welcome to Filter.io</h3>
-        <p>Hover over the filter dropdown to view filter options. Once you find one you like, test it out and snap a picture to share with your friends!</p>
-        <button class="clear-instructions btn">Done</button>
-      </div>
+        <section class="blur">
 
-      <section class="blur">
+          <div class="video-background">&nbsp;</div>
+          <video id="video" autoplay muted></video>
+          <canvas id="game-canvas" width="640" height="480"></canvas>
+          <canvas id="effect-canvas" width="640" height="480"></canvas>
+      
+          <div class="control-background">
+            <div class="filter-controls">
+              <div class="dropdown btn-container">
 
-        <div class="video-background">&nbsp;</div>
-        <video id="video" autoplay muted></video>
-        <canvas id="game-canvas" width="640" height="480"></canvas>
-        <canvas id="effect-canvas" width="640" height="480"></canvas>
-     
-        <div class="control-background">
-          <div class="filter-controls">
-            <div class="dropdown btn-container">
+                <button class="btn selector off-able">Select Filter</button>
+                <div class="dropdown-content">
+                  <button class="filter-select off-able" value="nose" >Clown Nose</button>
+                  <button class="filter-select off-able" value="mask" >Mask</button>
+                  <button class="filter-select off-able" value="tessalate">Different Mask</button>
+                  <button class="filter-select off-able" value="ears">Ears?</button>
+                  <button class="filter-select off-able" value="flowers">Flowers</button>
+                  <button class="filter-select off-able" value="mustache">I Mustache U a Question</button>
+                  <button class="filter-select off-able" value="none">No Filter</button>
+                  <button class="filter-select flappy" value="flappy" disabled>Flappy Bird?</button>
+                </div>
+              </div>
 
-              <button class="btn selector off-able">Select Filter</button>
-              <div class="dropdown-content">
-                <button class="filter-select off-able" value="nose" >Clown Nose</button>
-                <button class="filter-select off-able" value="mask" >Mask</button>
-                <button class="filter-select off-able" value="tessalate">Different Mask</button>
-                <button class="filter-select off-able" value="ears">Ears?</button>
-                <button class="filter-select off-able" value="flowers">Flowers</button>
-                <button class="filter-select off-able" value="mustache">I Mustache U a Question</button>
-                <button class="filter-select off-able" value="none">No Filter</button>
-                <button class="filter-select flappy" value="flappy" disabled>Flappy Bird?</button>
+              <div class="camera-controls btn-container">
+                <button class="capture btn off-able" >Take picture</button>
+                <button class="webcam-toggle btn" data-on="true">Toggle Webcam</button>
               </div>
             </div>
-
-            <div class="camera-controls btn-container">
-              <button class="capture btn off-able" >Take picture</button>
-              <button class="webcam-toggle btn" data-on="true">Toggle Webcam</button>
-            </div>
           </div>
-        </div>
-       
-      </section>
+        
+        </section>
+      </div>  
     </main>
     <footer>
       <div class="copyright">
