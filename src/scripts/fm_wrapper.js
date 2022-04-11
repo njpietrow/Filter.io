@@ -13,7 +13,7 @@ class FM {
       return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`;
     }});
     this.faceMesh.setOptions({
-      maxNumFaces: 3,
+      maxNumFaces: 4,
       refineLandmarks: true,
       minDetectionConfidence: 0.5,
       minTrackingConfidence: 0.5
