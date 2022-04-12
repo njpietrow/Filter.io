@@ -5,6 +5,7 @@
 <a href="https://njpietrow.github.io/Filter.io/">Filterio</a> is a photobooth appliction that uses facial recognition to overlay face filters onto a webcam video feed. By tracking specific facial features like eyes and a nose, Filterio can map filters onto a face by rotating and translating the filters accordingly. The design of the page takes influences from 80's synthwave styles. After exploring the available filter options, snap a picture with the capture button to save a photo and share with your friends! 
 <br>
 
+<img src="https://github.com/njpietrow/Filter.io/blob/main/assets/project_pic.png" alt="">
 
 ## Technologies Used
 Filter.io was built using the following technologies: 
