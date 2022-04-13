@@ -6,7 +6,7 @@
 <br>
 <br>
 <p align="center">
-  <img src="https://github.com/njpietrow/Filter.io/blob/main/assets/project_pic.png" style="width: 50%" alt="">
+  <img src="https://raw.githubusercontent.com/njpietrow/Filter.io/main/assets/app_pic.png" style="width: 50%" alt="">
 </p>
 <br>
 
