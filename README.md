@@ -4,7 +4,7 @@
 <br>
 <br>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/njpietrow/Filter.io/main/assets/app_pic.png" style="width: 50%" alt="">
+  <img src="https://media.giphy.com/media/d7DzvSBdBiYGQulmFi/giphy.gif" alt="filterio-gif"></a></img>
 </p>
 <br>
 
