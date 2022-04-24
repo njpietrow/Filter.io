@@ -20,7 +20,7 @@ header{
   // box-shadow: 0 8px 6px -6px black;
 }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   section > * {
     aspect-ratio: 480/640 !important;
     width: 80% !important;
@@ -31,13 +31,32 @@ header{
     flex-direction: column;
     align-items: flex-start;
   }
-
+  .instructions {
+    max-height: 300px !important;
+  }
+  .instructions p {
+    visibility: hidden;
+    // height: 0;
+  }
+  .instructions p:after {
+    visibility: visible;
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    padding: 6px 6px;
+    margin: auto;
+    content: "Webcam access only allowed on the desktop version of the site. Please visit again from a computer" !important;
+  }
   .filter-controls * {
     width: 80% !important;
     font-size: .8em !important;
   }
+
  
 }
+
+
 
 .dropdown-content{
   background: transparent !important;

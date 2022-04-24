@@ -164,7 +164,7 @@ footer {
   background-color: white;
   max-width: 300px;
   min-height: 200px;
-  max-height: 300px;
+  max-height: 200px;
   left: 50%;
   transform: translate(-50%, -50%);
   filter: none;
@@ -184,7 +184,7 @@ footer {
   font-weight: 400;
   text-align: center;
   color: #c2cdeb;
-  width: 120%;
+  width: 110%;
 }
 
 .content {
@@ -200,7 +200,7 @@ header {
   border-bottom: 1px solid #E68E36;
 }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   section > * {
     aspect-ratio: 480/640 !important;
     width: 80% !important;
@@ -210,6 +210,25 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .instructions {
+    max-height: 300px !important;
+  }
+
+  .instructions p {
+    visibility: hidden;
+  }
+
+  .instructions p:after {
+    visibility: visible;
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    padding: 6px 6px;
+    margin: auto;
+    content: "Webcam access only allowed on the desktop version of the site. Please visit again from a computer" !important;
   }
 
   .filter-controls * {
