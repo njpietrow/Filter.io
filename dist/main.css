@@ -35,7 +35,7 @@ button {
 
 .blur {
   filter: blur(10px);
-  transition: all 0.3s ease;
+  transition: all 1s ease;
   pointer-events: none;
 }
 
@@ -136,8 +136,7 @@ h1 {
   margin-left: 0;
   margin-right: 0;
   margin-top: 52vh;
-  margin-bottom: 0;
-  transition: all 1s ease;
+  transition: filter 1s ease;
 }
 
 footer {
@@ -175,6 +174,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   visibility: visible;
+  visibility: visible;
+  transition: all 1s ease;
 }
 
 .instructions p {
@@ -185,6 +186,7 @@ footer {
   text-align: center;
   color: #c2cdeb;
   width: 110%;
+  transition: all 1s ease;
 }
 
 .content {
